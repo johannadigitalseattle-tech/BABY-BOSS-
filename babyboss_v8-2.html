@@ -1,0 +1,1686 @@
+<!doctype html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Baby Boss — Text Creation Studio</title><script src="https://cdn.tailwindcss.com"></script><link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Poppins:wght@400;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet"><style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;width:100%;height:100%}body{background:linear-gradient(135deg,#fff9fc 0%,#fef6f9 25%,#f5f9ff 75%,#fef3f8 100%);position:relative;overflow:hidden}body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:radial-gradient(circle at 15% 25%,rgba(255,182,193,0.12) 0%,transparent 50%),radial-gradient(circle at 85% 75%,rgba(230,190,255,0.12) 0%,transparent 50%);pointer-events:none;z-index:0}#app-wrapper{position:relative;z-index:1}.title-top{font-family:'Montserrat',sans-serif;font-size:0.85rem;font-weight:900;letter-spacing:0.4em;color:#111;text-transform:uppercase;display:block;text-align:center;margin-bottom:0.2rem}.title-main{font-family:'Fredoka',sans-serif;font-size:3.5rem;font-weight:700;background:linear-gradient(135deg,#111 0%,#ff1493 30%,#ff69b4 55%,#ffd700 80%,#ffaa00 100%);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:2px;animation:candyPulse 3s ease-in-out infinite;display:block;text-align:center}@keyframes candyPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}.input-candy{background:rgba(255,255,255,0.9);border:3px solid #ffb6d9;border-radius:25px;transition:all 0.3s ease;font-family:'Fredoka',sans-serif;font-size:1rem;font-weight:600;color:#ff1493}.input-candy:focus{outline:none;border-color:#ff1493;background:white;box-shadow:0 0 25px rgba(255,20,147,0.3);transform:scale(1.02)}.btn-generate{background:linear-gradient(135deg,#ff1493 0%,#ff69b4 100%);border:none;cursor:pointer;transition:all 0.3s ease;box-shadow:0 6px 20px rgba(255,20,147,0.35);border-radius:25px;font-family:'Fredoka',sans-serif;font-weight:700;font-size:1rem;color:white}.btn-generate:hover{transform:translateY(-3px)}.btn-clear{background:rgba(255,255,255,0.85);color:#ff69b4;border:3px solid #ffb6d9;transition:all 0.3s ease;cursor:pointer;border-radius:25px;font-family:'Fredoka',sans-serif;font-weight:700;font-size:0.95rem}.language-btn{background:rgba(255,255,255,0.85);border:3px solid #ffb6d9;color:#ff69b4;cursor:pointer;transition:all 0.3s ease;font-family:'Fredoka',sans-serif;font-weight:700;font-size:0.9rem;border-radius:20px;padding:0.5rem 1rem}.language-btn.active{background:linear-gradient(135deg,#ff1493,#ff69b4);border-color:#ff1493;color:white}.selector-btn{transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);border:3px solid rgba(255,107,180,0.3);background:linear-gradient(135deg,rgba(255,192,203,0.5),rgba(255,255,255,0.8)) !important;color:#ff1493;cursor:pointer;font-family:'Fredoka',sans-serif;border-radius:35px;font-weight:800;font-size:1.3rem;padding:0.8rem !important;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;line-height:1.2;min-height:80px;min-width:80px}.selector-btn.active{border-color:#ff1493;background:linear-gradient(135deg,#ffb6d9,#fff0f5) !important;box-shadow:0 8px 25px rgba(255,20,147,0.4);transform:scale(1.05)}.selector-btn:hover{border-color:#ffb6d9;transform:scale(1.05)}.color-circle{width:75px;height:75px;border-radius:50%;border:3px solid white;cursor:pointer;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(255,107,180,0.2);padding:0 !important;display:flex;align-items:center;justify-content:center}.color-circle-wrapper{display:flex;flex-direction:column;align-items:center;gap:0.4rem;position:relative}.color-name{font-size:0.7rem;font-weight:700;color:#333;font-family:'Montserrat',sans-serif;text-transform:uppercase;letter-spacing:0.3px}.style-name{font-size:0.9rem;margin-top:8px;font-weight:700;color:#333;font-family:'Montserrat',sans-serif;text-transform:uppercase}.style-desc{font-size:0.75rem;margin-top:3px;font-weight:600;color:#ff69b4;font-family:'Montserrat',sans-serif}.style-btn-wrapper,.accessory-wrapper,.bg-wrapper{display:flex;flex-direction:column;align-items:center;gap:0.3rem;position:relative}.color-circle:hover{transform:scale(1.1)}.color-circle.active{border:4px solid #ff1493;box-shadow:0 8px 25px rgba(255,20,147,0.4);transform:scale(1.15)}.accessory-circle{width:85px;height:85px;border-radius:50%;border:3px solid rgba(255,107,180,0.3);cursor:pointer;transition:all 0.3s ease;background:linear-gradient(135deg,rgba(255,192,203,0.5),rgba(255,255,255,0.8)) !important;padding:0 !important;display:flex;align-items:center;justify-content:center;font-size:2.2rem;flex-shrink:0}.accessory-circle:hover{transform:scale(1.1) rotate(5deg)}.accessory-circle.active{border-color:#ff1493;background:linear-gradient(135deg,#ffb6d9,#fff0f5) !important;box-shadow:0 8px 25px rgba(255,20,147,0.4);transform:scale(1.15)}.accessory-name,.bg-name{font-size:0.6rem;font-weight:700;color:#333;font-family:'Montserrat',sans-serif;text-transform:uppercase;margin-top:4px}.prompt-card{background:rgba(255,255,255,0.95);border:3px solid #ffb6d9;border-radius:30px;padding:2rem;transition:all 0.3s ease;box-shadow:0 8px 30px rgba(255,107,180,0.15)}.prompt-card:hover{border-color:#ff1493;transform:translateY(-5px)}.copy-btn{background:linear-gradient(135deg,#ff1493,#ff69b4);color:white;border:none;cursor:pointer;transition:all 0.3s ease;border-radius:20px;font-family:'Fredoka',sans-serif;font-weight:700;font-size:0.95rem;padding:0.5rem 1rem;width:100%}.section-title{font-family:'Fredoka',sans-serif;font-weight:700;color:#fff;font-size:1rem;text-transform:uppercase;letter-spacing:1px;background:linear-gradient(135deg,#ff69b4,#ffb6d9);padding:0.6rem 1.2rem;border-radius:20px;display:inline-block}.bg-wrapper-button{cursor:pointer;transition:all 0.3s ease;border:3px solid transparent;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;height:75px;width:100%}.bg-wrapper-button:hover{transform:scale(1.05)}.bg-wrapper-button.active{border-color:#ff1493;box-shadow:0 8px 25px rgba(255,20,147,0.4);transform:scale(1.08)}.accessories-count{font-size:0.85rem;color:#ff1493;font-weight:bold;text-align:center;margin-top:8px;font-family:'Montserrat',sans-serif}.warning-box{background:linear-gradient(135deg,rgba(255,193,7,0.1),rgba(255,152,0,0.1));border:2px solid #ff9800;border-radius:15px;padding:1rem;margin-top:1rem;font-size:0.85rem;color:#ff6f00;font-family:'Poppins',sans-serif;text-align:center}.rec-badge{position:absolute;top:-6px;right:-6px;font-size:0.75rem;z-index:10}.recommended-item{border-color:#ff1493 !important;box-shadow:0 0 12px rgba(255,20,147,0.4) !important}.phrase-note{background:linear-gradient(135deg,rgba(255,182,193,0.3),rgba(255,255,255,0.8));border:2px dashed #ff69b4;border-radius:15px;padding:0.6rem 1rem;margin-top:0.5rem;font-size:0.8rem;color:#ff1493;font-family:'Fredoka',sans-serif;text-align:center;display:none}.phrase-note.visible{display:block}.baby-footer{border-top:1px solid #ffb6d9;padding:12px 16px;text-align:center;max-width:860px;margin:0 auto}.footer-tool-name{font-family:'Fredoka',sans-serif;font-size:1rem;font-weight:700;background:linear-gradient(135deg,#ff1493,#9333ea);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:4px}.footer-follow{font-size:0.7rem;color:#aaa;font-family:'Poppins',sans-serif;margin-bottom:6px;letter-spacing:0.5px;text-transform:uppercase}.footer-social-btns{display:flex;justify-content:center;gap:8px;margin-bottom:8px}.footer-social-btn{display:flex;align-items:center;gap:4px;padding:4px 12px;border:1.5px solid #ffb6d9;border-radius:20px;background:white;font-size:0.72rem;font-family:'Poppins',sans-serif;color:#ff69b4;font-weight:600;text-decoration:none}.footer-legal{font-size:0.65rem;color:#bbb;font-family:'Poppins',sans-serif;line-height:1.6}.footer-legal a{color:#ff69b4;text-decoration:none}
+.color-circle-small{border-radius:50%;border:3px solid white;cursor:pointer;transition:all 0.3s ease;box-shadow:0 3px 10px rgba(255,107,180,0.2);padding:0 !important;display:flex;align-items:center;justify-content:center;}
+.color-circle-small:hover{transform:scale(1.1);}
+.color-circle-small.active{border:4px solid #ff1493;box-shadow:0 6px 18px rgba(255,20,147,0.5);transform:scale(1.15);}
+.color-bar-btn{position:relative;}
+#color-hue-slider::-webkit-slider-thumb{appearance:none;width:28px;height:28px;border-radius:50%;background:white;border:3px solid #ff1493;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.3);}
+#color-hue-slider::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:white;border:3px solid #ff1493;cursor:pointer;}
+#color-light-slider::-webkit-slider-thumb{appearance:none;width:28px;height:28px;border-radius:50%;background:white;border:3px solid #ff1493;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.3);}
+#color-light-slider::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:white;border:3px solid #ff1493;cursor:pointer;}
+
+.cats-grid-s,.cats-grid-a{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;background:white;padding:14px 12px;border-radius:20px;border:2px solid #ffb6d9;margin-bottom:14px;box-shadow:0 4px 15px rgba(255,107,180,0.15);}
+.cat-cell-s,.cat-cell-a{background:transparent;border:none;cursor:pointer;padding:8px 4px;border-radius:14px;display:flex;flex-direction:column;align-items:center;gap:4px;transition:all 0.3s ease;}
+.cat-icon-s,.cat-icon-a{width:54px;height:54px;background:linear-gradient(135deg,rgba(255,192,203,0.4),rgba(255,255,255,0.9));border:2.5px solid #ffb6d9;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.7rem;transition:all 0.3s ease;}
+.cat-cell-label-s,.cat-cell-label-a{font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.62rem;color:#8b5f7f;text-transform:uppercase;letter-spacing:0.3px;text-align:center;}
+.cat-cell-s.active .cat-icon-s,.cat-cell-a.active .cat-icon-a{background:linear-gradient(135deg,#ff1493,#ff69b4);border-color:#ff1493;box-shadow:0 6px 18px rgba(255,20,147,0.4);transform:scale(1.1);}
+.cat-cell-s.active .cat-cell-label-s,.cat-cell-a.active .cat-cell-label-a{color:#ff1493;font-weight:800;}
+.cat-cell-s.has-selected .cat-icon-s::after,.cat-cell-a.has-selected .cat-icon-a::after{content:'•';position:absolute;top:-4px;right:-4px;color:#ff1493;font-size:2rem;line-height:1;}
+.cat-cell-s,.cat-cell-a{position:relative;}
+.cat-cell-s.has-selected .cat-icon-s,.cat-cell-a.has-selected .cat-icon-a{border-color:#ff1493;}
+.styles-area-s,.styles-area-a{background:white;border-radius:22px;padding:20px 14px;border:3px solid #ffb6d9;box-shadow:0 6px 20px rgba(255,107,180,0.15);margin-bottom:14px;animation:slideIn 0.3s ease;}
+@keyframes slideIn{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:translateY(0);}}
+.cat-title-s{font-family:'Fredoka',sans-serif;color:#ff1493;font-size:1.1rem;text-align:center;font-weight:700;margin-bottom:4px;}
+.cat-sub-s{font-family:'Poppins',sans-serif;font-size:0.78rem;color:#8b5f7f;text-align:center;margin-bottom:18px;}
+.styles-list-s{display:flex;flex-direction:column;gap:12px;}
+.style-row-s{background:linear-gradient(135deg,rgba(255,192,203,0.3),rgba(255,255,255,0.9));border:2.5px solid rgba(255,107,180,0.3);border-radius:20px;padding:12px 14px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all 0.3s ease;}
+.style-row-s:hover{transform:scale(1.02);border-color:#ffb6d9;}
+.style-row-s.active{border-color:#ff1493;background:linear-gradient(135deg,#ffb6d9,#fff0f5);box-shadow:0 6px 18px rgba(255,20,147,0.3);}
+.style-emoji-big{width:56px;height:56px;background:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;box-shadow:0 3px 10px rgba(255,107,180,0.2);}
+.style-info{flex:1;display:flex;flex-direction:column;gap:2px;min-width:0;}
+.style-row-name{font-family:'Montserrat',sans-serif;font-weight:800;font-size:0.88rem;color:#333;text-transform:uppercase;letter-spacing:0.3px;}
+.style-row-desc{font-family:'Poppins',sans-serif;font-size:0.75rem;color:#ff69b4;line-height:1.3;}
+.check-icon-s{width:28px;height:28px;border-radius:50%;background:#ff1493;color:white;display:none;align-items:center;justify-content:center;font-weight:900;font-size:1rem;flex-shrink:0;}
+.style-row-s.active .check-icon-s{display:flex;}
+.new-badge-row{display:inline-block;background:linear-gradient(135deg,#ffd700,#ff1493);color:white;font-size:0.6rem;font-weight:800;padding:2px 8px;border-radius:10px;margin-left:6px;font-family:'Montserrat',sans-serif;}
+.selected-display{background:linear-gradient(135deg,rgba(255,20,147,0.08),rgba(255,105,180,0.08));border:2px solid #ffb6d9;border-radius:16px;padding:10px 14px;margin-bottom:14px;text-align:center;font-family:'Poppins',sans-serif;font-size:0.85rem;color:#8b5f7f;}
+.selected-label{font-weight:600;margin-right:6px;}
+.selected-value{font-family:'Fredoka',sans-serif;color:#ff1493;font-weight:700;}
+
+</style></head><body class="h-full">
+<div id="app-wrapper" class="w-full h-full overflow-auto">
+<div class="min-h-full flex flex-col items-center justify-center p-6 py-10">
+
+<div class="mb-6 flex gap-2">
+<button id="langEN" class="language-btn">🇬🇧 English</button>
+<button id="langES" class="language-btn active">🇪🇸 Español</button>
+</div>
+
+<div style="max-width:860px;margin:0 auto 2.5rem auto;padding:20px;border-radius:18px;border:2px solid #ffb6d9;box-shadow:0 4px 20px rgba(255,107,180,0.2);background:rgba(255,255,255,0.85);text-align:center;">
+<span class="title-top">✦ Text Creation ✦</span>
+<span class="title-main">✨ Baby Boss ✨</span>
+<p id="subtitle" style="font-family:'Poppins',sans-serif;color:#8b5f7f;font-weight:300;font-size:0.95rem;margin-top:0.3rem;">Generador de Textos Impresionantes</p>
+</div>
+
+<div class="w-full max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
+
+<div class="p-8 shadow-xl h-fit" style="background:linear-gradient(135deg,rgba(255,192,203,0.4),rgba(255,255,255,0.8));border:3px solid #ffc0e3;border-radius:80px;">
+<h3 id="styles-title" class="section-title mb-4 text-center text-lg">✨ Estilos</h3>
+<p id="styles-hint" style="text-align:center;font-family:'Poppins',sans-serif;color:#8b5f7f;font-size:0.78rem;margin-bottom:12px;">Toca una categoría para ver los estilos</p>
+<div class="cats-grid-s">
+<button class="cat-cell-s" data-s-cat-id="s_bubble">
+<div class="cat-icon-s">🫧</div>
+<span class="cat-cell-label-s" data-es="Bubble" data-en="Bubble">Bubble</span>
+</button>
+<button class="cat-cell-s" data-s-cat-id="s_chrome">
+<div class="cat-icon-s">💎</div>
+<span class="cat-cell-label-s" data-es="Chrome" data-en="Chrome">Chrome</span>
+</button>
+<button class="cat-cell-s" data-s-cat-id="s_y2k">
+<div class="cat-icon-s">🌈</div>
+<span class="cat-cell-label-s" data-es="Y2K" data-en="Y2K">Y2K</span>
+</button>
+<button class="cat-cell-s" data-s-cat-id="s_neon">
+<div class="cat-icon-s">⚡</div>
+<span class="cat-cell-label-s" data-es="Neon" data-en="Neon">Neon</span>
+</button>
+<button class="cat-cell-s" data-s-cat-id="s_street">
+<div class="cat-icon-s">🔥</div>
+<span class="cat-cell-label-s" data-es="Street" data-en="Street">Street</span>
+</button>
+<button class="cat-cell-s" data-s-cat-id="s_soft">
+<div class="cat-icon-s">☁️</div>
+<span class="cat-cell-label-s" data-es="Soft" data-en="Soft">Soft</span>
+</button>
+<button class="cat-cell-s" data-s-cat-id="s_sticker">
+<div class="cat-icon-s">💅</div>
+<span class="cat-cell-label-s" data-es="Sticker" data-en="Sticker">Sticker</span>
+</button>
+<button class="cat-cell-s" data-s-cat-id="s_glam">
+<div class="cat-icon-s">👑</div>
+<span class="cat-cell-label-s" data-es="Glam" data-en="Glam">Glam</span>
+</button>
+<button class="cat-cell-s" data-s-cat-id="s_cute">
+<div class="cat-icon-s">🎀</div>
+<span class="cat-cell-label-s" data-es="Cute" data-en="Cute">Cute</span>
+</button>
+<button class="cat-cell-s" data-s-cat-id="s_sport">
+<div class="cat-icon-s">🏆</div>
+<span class="cat-cell-label-s" data-es="Sport" data-en="Sport">Sport</span>
+</button>
+<button class="cat-cell-s" data-s-cat-id="s_patch">
+<div class="cat-icon-s">🧶</div>
+<span class="cat-cell-label-s" data-es="Patch" data-en="Patch">Patch</span>
+</button>
+</div>
+<div class="styles-area-s" id="styles-area-s" style="display:none;">
+<p class="cat-title-s" id="s-cat-title"></p>
+<p class="cat-sub-s" id="s-cat-sub"></p>
+<div class="styles-list-s" id="styles-list-s"></div>
+</div>
+<div class="selected-display" id="selected-style-display" style="display:none;">
+<span class="selected-label" data-es="Estilo seleccionado:" data-en="Selected style:">Estilo seleccionado:</span>
+<span class="selected-value" id="selected-style-value"></span>
+</div>
+</div>
+
+<div class="p-6 shadow-xl h-fit" style="background:linear-gradient(135deg,rgba(230,190,255,0.4),rgba(255,255,255,0.8));border:3px solid #e6b3ff;border-radius:60px;">
+<h3 id="colors-title" class="section-title mb-4 text-center">🎨 Colores</h3>
+<div class="flex flex-wrap gap-3 justify-center">
+<div class="color-circle-wrapper"><button class="color-btn color-circle active" data-color="hot-pink" style="background:linear-gradient(135deg,#ff1493,#c71585);"></button><span class="color-name">Hot Pink</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="barbie-pink" style="background:#FF0090;"></button><span class="color-name">Barbie Pink</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="pure-black" style="background:#111111;"></button><span class="color-name">Black</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="pure-white" style="background:#ffffff;border:2px solid #ffb6d9;"></button><span class="color-name">White</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="cotton-candy" style="background:linear-gradient(135deg,#87ceeb,#ffb6c1);"></button><span class="color-name">Cotton Candy</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="lavender" style="background:linear-gradient(135deg,#e6b3ff,#ffb3d9);"></button><span class="color-name">Lavender</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="bubblegum" style="background:linear-gradient(135deg,#ff69b4,#6495ed);"></button><span class="color-name">Bubblegum</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="peach" style="background:linear-gradient(135deg,#ffb347,#ff7f50);"></button><span class="color-name">Peach</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="mint" style="background:linear-gradient(135deg,#7fffd4,#20b2aa);"></button><span class="color-name">Mint</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="butter" style="background:linear-gradient(135deg,#ffff99,#ffb6d9);"></button><span class="color-name">Butter</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="orchid" style="background:linear-gradient(135deg,#da70d6,#e6b3ff);"></button><span class="color-name">Orchid</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="neon" style="background:linear-gradient(135deg,#ff1493,#00f2fe);"></button><span class="color-name">Neon</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="holo-gradient" style="background:linear-gradient(135deg,#ff1493,#6495ed);"></button><span class="color-name">Holo</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="sunset-fire" style="background:linear-gradient(135deg,#ff6b35,#f7931e);"></button><span class="color-name">Sunset</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="ocean-vibes" style="background:linear-gradient(135deg,#0093e9,#80d0c0);"></button><span class="color-name">Ocean</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="electric-dream" style="background:linear-gradient(135deg,#a78bfa,#ec4899);"></button><span class="color-name">Electric</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="sakura-bloom" style="background:linear-gradient(135deg,#ffc0e3,#f472b6);"></button><span class="color-name">Sakura</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="lime-punch" style="background:linear-gradient(135deg,#84cc16,#ffff00);"></button><span class="color-name">Lime</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="grape-soda" style="background:linear-gradient(135deg,#8b5cf6,#d946ef);"></button><span class="color-name">Grape</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="rose-gold" style="background:linear-gradient(135deg,#f4a261,#e76f51);"></button><span class="color-name">Rose Gold</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="cyber-pink" style="background:linear-gradient(135deg,#ff006e,#fb5607);"></button><span class="color-name">Cyber</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="aqua-mint" style="background:linear-gradient(135deg,#06d6a0,#118ab2);"></button><span class="color-name">Aqua Mint</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="golden-honey" style="background:linear-gradient(135deg,#ffa500,#ffd700);"></button><span class="color-name">Golden</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="cream-to-pink" style="background:linear-gradient(135deg,#fff5e6,#ff69b4);"></button><span class="color-name">Cream Pink</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="pink-to-lilac" style="background:linear-gradient(135deg,#ff1493,#c084fc);"></button><span class="color-name">Pink Lilac</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="silver-chrome" style="background:linear-gradient(135deg,#e8e8e8,#a0a0a0);"></button><span class="color-name">Silver</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="magenta-purple" style="background:linear-gradient(135deg,#ff00ff,#7b2d8b);"></button><span class="color-name">Magenta</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="royal-blue" style="background:linear-gradient(135deg,#1E40AF,#3B82F6);"></button><span class="color-name" data-es="Royal Blue" data-en="Royal Blue">Royal Blue</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="emerald" style="background:linear-gradient(135deg,#059669,#10B981);"></button><span class="color-name" data-es="Emerald" data-en="Emerald">Emerald</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="sage-green" style="background:linear-gradient(135deg,#9CAF88,#B5C4A3);"></button><span class="color-name" data-es="Sage Green" data-en="Sage Green">Sage Green</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="terracotta" style="background:linear-gradient(135deg,#E07856,#C06A4A);"></button><span class="color-name" data-es="Terracotta" data-en="Terracotta">Terracotta</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="coral" style="background:linear-gradient(135deg,#FF7F50,#FF6347);"></button><span class="color-name" data-es="Coral" data-en="Coral">Coral</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="mauve" style="background:linear-gradient(135deg,#C8A2C8,#B088A8);"></button><span class="color-name" data-es="Mauve" data-en="Mauve">Mauve</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="burgundy" style="background:linear-gradient(135deg,#800020,#5C0017);"></button><span class="color-name" data-es="Burgundy" data-en="Burgundy">Burgundy</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="champagne" style="background:linear-gradient(135deg,#F7E7CE,#E8D5B7);"></button><span class="color-name" data-es="Champagne" data-en="Champagne">Champagne</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="millennial-pink" style="background:linear-gradient(135deg,#F3C9DD,#F1A3C0);"></button><span class="color-name" data-es="Millennial Pink" data-en="Millennial Pink">Millennial Pink</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="rust-orange" style="background:linear-gradient(135deg,#B7410E,#A0522D);"></button><span class="color-name" data-es="Rust" data-en="Rust">Rust</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="tiffany-blue" style="background:linear-gradient(135deg,#0ABAB5,#54C8C3);"></button><span class="color-name" data-es="Tiffany Blue" data-en="Tiffany Blue">Tiffany Blue</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="hot-coral" style="background:linear-gradient(135deg,#FF4040,#FF6B6B);"></button><span class="color-name" data-es="Hot Coral" data-en="Hot Coral">Hot Coral</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="mustard" style="background:linear-gradient(135deg,#FFDB58,#D4A017);"></button><span class="color-name" data-es="Mustard" data-en="Mustard">Mustard</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="blush" style="background:linear-gradient(135deg,#FFCCCB,#FFB6C1);"></button><span class="color-name" data-es="Blush" data-en="Blush">Blush</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="plum" style="background:linear-gradient(135deg,#8E4585,#703865);"></button><span class="color-name" data-es="Plum" data-en="Plum">Plum</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="baby-blue" style="background:linear-gradient(135deg,#89CFF0,#A7D8F0);"></button><span class="color-name" data-es="Baby Blue" data-en="Baby Blue">Baby Blue</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="neon-green" style="background:linear-gradient(135deg,#39FF14,#7FFF00);"></button><span class="color-name" data-es="Neon Green" data-en="Neon Green">Neon Green</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="fuchsia-neon" style="background:linear-gradient(135deg,#FF00FF,#E600E6);"></button><span class="color-name" data-es="Fuchsia Neon" data-en="Fuchsia Neon">Fuchsia Neon</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="cherry-red" style="background:linear-gradient(135deg,#DE3163,#B22222);"></button><span class="color-name" data-es="Cherry Red" data-en="Cherry Red">Cherry Red</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="cobalt-blue" style="background:linear-gradient(135deg,#0047AB,#002F6C);"></button><span class="color-name" data-es="Cobalt" data-en="Cobalt">Cobalt</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle color-bar-btn" data-color="color-bar" data-mode="text" style="background:linear-gradient(90deg,#ff0000 0%,#ff8800 15%,#ffff00 30%,#00ff00 45%,#00ffff 60%,#0000ff 75%,#ff00ff 90%,#ff0088 100%);position:relative;"><span style="position:absolute;bottom:-2px;right:-2px;background:white;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;">🎨</span></button><span class="color-name" data-es="Paleta" data-en="Palette">Paleta</span></div>
+<div class="color-circle-wrapper"><button class="color-btn color-circle" data-color="custom" style="background:linear-gradient(135deg,#ff1493,#ffd700,#00f2fe,#ff69b4);font-size:0.55rem;font-weight:900;color:white;text-shadow:0 1px 2px rgba(0,0,0,0.6);">CUSTOM</button><span class="color-name">Custom</span></div>
+</div>
+<div id="custom-color-box" style="display:none;margin-top:14px;padding:14px;background:rgba(255,255,255,0.95);border:2px dashed #ff69b4;border-radius:15px;text-align:center;">
+<p id="custom-label" style="font-family:'Fredoka',sans-serif;color:#ff1493;font-size:0.9rem;margin:0 0 10px 0;font-weight:700;">✏️ Escribe tu color en inglés:</p>
+<input type="text" id="custom-color-input" placeholder="ej: royal blue, forest green..." style="width:100%;padding:10px 14px;border:2px solid #ffb6d9;border-radius:20px;font-family:'Fredoka',sans-serif;color:#ff1493;font-size:0.95rem;outline:none;text-align:center;background:white;font-weight:600;">
+</div>
+</div>
+<div id="border-colors-section" style="display:none;background:linear-gradient(135deg,rgba(255,192,203,0.3),rgba(255,255,255,0.8));border:2px solid #ffb6d9;border-radius:20px;padding:16px;margin-top:14px;">
+<h4 id="border-colors-title" style="font-family:'Fredoka',sans-serif;color:#ff1493;font-size:1rem;text-align:center;margin-bottom:4px;font-weight:700;">🎨 Color del Borde</h4>
+<p id="border-colors-hint" style="text-align:center;font-family:'Poppins',sans-serif;color:#8b5f7f;font-size:0.75rem;margin-bottom:12px;">Elige el color del borde o escribe uno personalizado</p>
+<div class="grid grid-cols-5 gap-2 justify-items-center" style="gap:8px;">
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="barbie-pink" style="background:#FF0090;width:48px;height:48px;"></button><span class="color-name" data-es="Barbie Pink" data-en="Barbie Pink" style="font-size:0.6rem;">Barbie Pink</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="white" style="background:#ffffff;border:2px solid #ffb6d9;width:48px;height:48px;"></button><span class="color-name" data-es="White" data-en="White" style="font-size:0.6rem;">White</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="black" style="background:#111111;width:48px;height:48px;"></button><span class="color-name" data-es="Black" data-en="Black" style="font-size:0.6rem;">Black</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="gold" style="background:linear-gradient(135deg,#FFD700,#DAA520);width:48px;height:48px;"></button><span class="color-name" data-es="Gold" data-en="Gold" style="font-size:0.6rem;">Gold</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="silver" style="background:linear-gradient(135deg,#C0C0C0,#A8A8A8);width:48px;height:48px;"></button><span class="color-name" data-es="Silver" data-en="Silver" style="font-size:0.6rem;">Silver</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="holographic" style="background:linear-gradient(135deg,#ff1493,#00f2fe,#ffd700,#9333ea);width:48px;height:48px;"></button><span class="color-name" data-es="Holo" data-en="Holo" style="font-size:0.6rem;">Holo</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="hot-pink" style="background:#FF1493;width:48px;height:48px;"></button><span class="color-name" data-es="Hot Pink" data-en="Hot Pink" style="font-size:0.6rem;">Hot Pink</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="baby-blue" style="background:#89CFF0;width:48px;height:48px;"></button><span class="color-name" data-es="Baby Blue" data-en="Baby Blue" style="font-size:0.6rem;">Baby Blue</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="red" style="background:#DC143C;width:48px;height:48px;"></button><span class="color-name" data-es="Red" data-en="Red" style="font-size:0.6rem;">Red</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="lavender" style="background:#B57EDC;width:48px;height:48px;"></button><span class="color-name" data-es="Lavender" data-en="Lavender" style="font-size:0.6rem;">Lavender</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="mint" style="background:#98FB98;width:48px;height:48px;"></button><span class="color-name" data-es="Mint" data-en="Mint" style="font-size:0.6rem;">Mint</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="coral" style="background:#FF7F50;width:48px;height:48px;"></button><span class="color-name" data-es="Coral" data-en="Coral" style="font-size:0.6rem;">Coral</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="peach" style="background:#FFCBA4;width:48px;height:48px;"></button><span class="color-name" data-es="Peach" data-en="Peach" style="font-size:0.6rem;">Peach</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="royal-blue" style="background:#1E40AF;width:48px;height:48px;"></button><span class="color-name" data-es="Royal Blue" data-en="Royal Blue" style="font-size:0.6rem;">Royal Blue</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="emerald" style="background:#059669;width:48px;height:48px;"></button><span class="color-name" data-es="Emerald" data-en="Emerald" style="font-size:0.6rem;">Emerald</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="burgundy" style="background:#800020;width:48px;height:48px;"></button><span class="color-name" data-es="Burgundy" data-en="Burgundy" style="font-size:0.6rem;">Burgundy</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="rose-gold" style="background:linear-gradient(135deg,#B76E79,#E8B4B8);width:48px;height:48px;"></button><span class="color-name" data-es="Rose Gold" data-en="Rose Gold" style="font-size:0.6rem;">Rose Gold</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="tiffany-blue" style="background:#0ABAB5;width:48px;height:48px;"></button><span class="color-name" data-es="Tiffany" data-en="Tiffany" style="font-size:0.6rem;">Tiffany</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="neon-green" style="background:#39FF14;width:48px;height:48px;"></button><span class="color-name" data-es="Neon Green" data-en="Neon Green" style="font-size:0.6rem;">Neon Green</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="fuchsia" style="background:#FF00FF;width:48px;height:48px;"></button><span class="color-name" data-es="Fuchsia" data-en="Fuchsia" style="font-size:0.6rem;">Fuchsia</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="yellow" style="background:#FFD700;width:48px;height:48px;"></button><span class="color-name" data-es="Yellow" data-en="Yellow" style="font-size:0.6rem;">Yellow</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="orange" style="background:#FF8C00;width:48px;height:48px;"></button><span class="color-name" data-es="Orange" data-en="Orange" style="font-size:0.6rem;">Orange</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="purple" style="background:#8B00FF;width:48px;height:48px;"></button><span class="color-name" data-es="Purple" data-en="Purple" style="font-size:0.6rem;">Purple</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="turquoise" style="background:#40E0D0;width:48px;height:48px;"></button><span class="color-name" data-es="Turquoise" data-en="Turquoise" style="font-size:0.6rem;">Turquoise</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="hot-red" style="background:#FF2400;width:48px;height:48px;"></button><span class="color-name" data-es="Hot Red" data-en="Hot Red" style="font-size:0.6rem;">Hot Red</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="sage" style="background:#9CAF88;width:48px;height:48px;"></button><span class="color-name" data-es="Sage" data-en="Sage" style="font-size:0.6rem;">Sage</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="mustard" style="background:#FFDB58;width:48px;height:48px;"></button><span class="color-name" data-es="Mustard" data-en="Mustard" style="font-size:0.6rem;">Mustard</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="plum" style="background:#8E4585;width:48px;height:48px;"></button><span class="color-name" data-es="Plum" data-en="Plum" style="font-size:0.6rem;">Plum</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="cream" style="background:#FFFDD0;width:48px;height:48px;"></button><span class="color-name" data-es="Cream" data-en="Cream" style="font-size:0.6rem;">Cream</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="brown" style="background:#8B4513;width:48px;height:48px;"></button><span class="color-name" data-es="Brown" data-en="Brown" style="font-size:0.6rem;">Brown</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small color-bar-btn" data-border-color="color-bar" data-mode="border" style="background:linear-gradient(90deg,#ff0000 0%,#ff8800 15%,#ffff00 30%,#00ff00 45%,#00ffff 60%,#0000ff 75%,#ff00ff 90%,#ff0088 100%);width:48px;height:48px;position:relative;"><span style="position:absolute;bottom:-2px;right:-2px;background:white;border-radius:50%;width:16px;height:16px;display:flex;align-items:center;justify-content:center;font-size:0.55rem;">🎨</span></button><span class="color-name" data-es="Paleta" data-en="Palette" style="font-size:0.6rem;">Paleta</span></div>
+<div class="color-circle-wrapper"><button class="border-color-btn color-circle-small" data-border-color="custom-border" style="background:linear-gradient(135deg,#ff1493,#ffd700,#00f2fe,#ff69b4);font-size:0.4rem;font-weight:900;color:white;text-shadow:0 1px 2px rgba(0,0,0,0.6);width:48px;height:48px;">CUSTOM</button><span class="color-name" data-es="Custom" data-en="Custom" style="font-size:0.6rem;">Custom</span></div>
+</div>
+<div id="custom-border-box" style="display:none;margin-top:12px;background:white;border-radius:15px;padding:12px;border:2px dashed #ff69b4;">
+<p id="custom-border-label" style="font-family:'Fredoka',sans-serif;color:#ff1493;font-size:0.8rem;margin:0 0 8px 0;text-align:center;font-weight:700;">¿No te gusta? Escribe tu color de borde personalizado aquí ✏️</p>
+<input type="text" id="custom-border-input" placeholder="ej: royal blue, sage green..." style="width:100%;padding:8px 12px;border:2px solid #ffb6d9;border-radius:15px;font-family:'Fredoka',sans-serif;color:#ff1493;font-size:0.85rem;outline:none;text-align:center;background:white;font-weight:600;">
+</div>
+</div>
+
+<div class="p-6 shadow-xl h-fit" style="background:linear-gradient(135deg,rgba(255,182,193,0.4),rgba(255,255,255,0.8));border:3px solid #ffc0d9;border-radius:80px;">
+<h3 id="accessories-title" class="section-title mb-4 text-center">✨ Accesorios (Elige hasta 4)</h3>
+<p id="accessories-hint" style="text-align:center;font-family:'Poppins',sans-serif;color:#8b5f7f;font-size:0.78rem;margin-bottom:12px;">Toca una categoría para ver los accesorios</p>
+<div class="cats-grid-a">
+<button class="cat-cell-a" data-a-cat-id="a_money">
+<div class="cat-icon-a">💰</div>
+<span class="cat-cell-label-a" data-es="Dinero" data-en="Money">Dinero</span>
+</button>
+<button class="cat-cell-a" data-a-cat-id="a_crown">
+<div class="cat-icon-a">👑</div>
+<span class="cat-cell-label-a" data-es="Joyas" data-en="Jewels">Joyas</span>
+</button>
+<button class="cat-cell-a" data-a-cat-id="a_hearts">
+<div class="cat-icon-a">💝</div>
+<span class="cat-cell-label-a" data-es="Corazones" data-en="Hearts">Corazones</span>
+</button>
+<button class="cat-cell-a" data-a-cat-id="a_sparkle">
+<div class="cat-icon-a">✨</div>
+<span class="cat-cell-label-a" data-es="Brillo" data-en="Sparkle">Brillo</span>
+</button>
+<button class="cat-cell-a" data-a-cat-id="a_urban">
+<div class="cat-icon-a">🔥</div>
+<span class="cat-cell-label-a" data-es="Urbano" data-en="Urban">Urbano</span>
+</button>
+<button class="cat-cell-a" data-a-cat-id="a_props">
+<div class="cat-icon-a">🤠</div>
+<span class="cat-cell-label-a" data-es="Props" data-en="Props">Props</span>
+</button>
+<button class="cat-cell-a" data-a-cat-id="a_sport">
+<div class="cat-icon-a">🏀</div>
+<span class="cat-cell-label-a" data-es="Deportes" data-en="Sports">Deportes</span>
+</button>
+<button class="cat-cell-a" data-a-cat-id="a_girly">
+<div class="cat-icon-a">💅</div>
+<span class="cat-cell-label-a" data-es="Girly" data-en="Girly">Girly</span>
+</button>
+<button class="cat-cell-a" data-a-cat-id="a_custom">
+<div class="cat-icon-a">🎨</div>
+<span class="cat-cell-label-a" data-es="Custom" data-en="Custom">Custom</span>
+</button>
+</div>
+<div class="styles-area-a" id="styles-area-a" style="display:none;">
+<p class="cat-title-s" id="a-cat-title"></p>
+<p class="cat-sub-s" id="a-cat-sub"></p>
+<div class="styles-list-s" id="accessories-list-a"></div>
+<div id="custom-acc-box" style="display:none;margin-top:14px;">
+<p id="custom-acc-label" style="font-family:'Fredoka',sans-serif;color:#ff1493;font-size:0.85rem;margin:0 0 8px 0;text-align:center;font-weight:700;">✏️ Escribe tu accesorio en inglés:</p>
+<input type="text" id="custom-acc-input" placeholder="ej: butterflies, cherries..." style="width:100%;padding:10px 14px;border:2px dashed #ff69b4;border-radius:20px;font-family:'Fredoka',sans-serif;color:#ff1493;font-size:0.9rem;outline:none;text-align:center;background:white;font-weight:600;">
+</div>
+</div>
+<div class="accessories-count" id="accessories-count">Selecciona 1-4 accesorios</div>
+</div>
+
+</div>
+
+<div class="p-6 shadow-xl mb-10" style="background:linear-gradient(135deg,rgba(200,220,240,0.4),rgba(255,255,255,0.8));border:3px solid #c0d9f0;border-radius:60px;">
+<h3 id="backgrounds-title" class="section-title mb-4 text-center">🎨 Fondos</h3>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+<div class="bg-wrapper"><button class="background-btn bg-wrapper-button active" data-background="pink-bokeh" style="background:radial-gradient(circle at 25% 25%,#ffb6d9,#fff0f5);">🎀</button><span class="bg-name">Pink Bokeh</span></div>
+<div class="bg-wrapper"><button class="background-btn bg-wrapper-button" data-background="holo-shift" style="background:linear-gradient(135deg,#ff1493,#6a5acd,#00f2fe);">🌈</button><span class="bg-name">Holographic</span></div>
+<div class="bg-wrapper"><button class="background-btn bg-wrapper-button" data-background="candy-marble" style="background:linear-gradient(45deg,#ffb6d9 25%,#87ceeb 50%,#ffb6d9 75%);">🧩</button><span class="bg-name">Marble</span></div>
+<div class="bg-wrapper"><button class="background-btn bg-wrapper-button" data-background="black-puddle" style="background:radial-gradient(ellipse at 30% 40%,#4a4a6a,#1a1a2e);">🖤</button><span class="bg-name">Black Puddle</span></div>
+<div class="bg-wrapper"><button class="background-btn bg-wrapper-button" data-background="rainbow-gradient" style="background:linear-gradient(90deg,#ff1493,#ff69b4,#ffff99,#87ceeb,#ff69b4);">🌅</button><span class="bg-name">Rainbow</span></div>
+<div class="bg-wrapper"><button class="background-btn bg-wrapper-button" data-background="glittery-pink" style="background:linear-gradient(135deg,#ffb3d9,#ff99cc);">✨</button><span class="bg-name">Glittery</span></div>
+<div class="bg-wrapper"><button class="background-btn bg-wrapper-button" data-background="aurora" style="background:linear-gradient(135deg,#06d6a0,#20b2aa,#ff69b4,#ff1493);">🌌</button><span class="bg-name">Aurora</span></div>
+<div class="bg-wrapper"><button class="background-btn bg-wrapper-button" data-background="bubble-wrap" style="background:linear-gradient(135deg,#ffb3d9,#ff99cc);">🫧</button><span class="bg-name">Bubbles</span></div>
+<div class="bg-wrapper"><button class="background-btn bg-wrapper-button" data-background="starry-night" style="background:linear-gradient(135deg,#1a1a3e,#2a2a4e);">⭐</button><span class="bg-name">Starry Night</span></div>
+<div class="bg-wrapper"><button class="background-btn bg-wrapper-button" data-background="cotton-clouds" style="background:linear-gradient(180deg,#ffb3d9 0%,#87ceeb 100%);">☁️</button><span class="bg-name">Clouds</span></div>
+<div class="bg-wrapper"><button class="background-btn bg-wrapper-button" data-background="brick-wall" style="background:linear-gradient(135deg,#8B4513,#A0522D);">🧱</button><span class="bg-name">Brick Wall</span></div>
+<div class="bg-wrapper"><button class="background-btn bg-wrapper-button" data-background="soft-mist" style="background:linear-gradient(135deg,#e0e0e0,#f5f5f5);">🌫️</button><span class="bg-name">Soft Mist</span></div>
+<div class="bg-wrapper"><button class="background-btn bg-wrapper-button" data-background="smoke-dark" style="background:linear-gradient(135deg,#2c2c2c,#4a4a4a);">💨</button><span class="bg-name">Smoke Dark</span></div>
+<div class="bg-wrapper"><button class="background-btn bg-wrapper-button" data-background="lava-flow" style="background:linear-gradient(135deg,#8B0000,#FF4500);">🌋</button><span class="bg-name">Lava Flow</span></div>
+<div class="bg-wrapper"><button class="background-btn bg-wrapper-button" data-background="neon-grid" style="background:linear-gradient(135deg,#0a0a2e,#1a0a3e);">🎮</button><span class="bg-name">Neon Grid</span></div>
+<div class="bg-wrapper"><button class="background-btn bg-wrapper-button" data-background="pure-black" style="background:#000000;">⬛</button><span class="bg-name">Pure Black</span></div>
+<div class="bg-wrapper"><button class="background-btn bg-wrapper-button" data-background="pure-white" style="background:linear-gradient(135deg,#ffffff,#f0f0f0);border:1px solid #eee;">⬜</button><span class="bg-name">Pure White</span></div>
+<div class="bg-wrapper"><button class="background-btn bg-wrapper-button" data-background="purple-glam" style="background:linear-gradient(135deg,#4a0080,#9333ea);">💜</button><span class="bg-name">Purple Glam</span></div>
+</div>
+</div>
+
+<!-- ADVANCED CONFIG SECTION -->
+<div class="mb-10 max-w-5xl mx-auto p-6 shadow-xl" style="background:linear-gradient(135deg,rgba(255,182,193,0.3),rgba(230,190,255,0.3));border:3px solid #e6b3ff;border-radius:40px;">
+<h3 id="advanced-title" class="section-title mb-2 text-center block mx-auto" style="display:block;width:fit-content;">⚙️ Configuración Avanzada</h3>
+<p id="advanced-subtitle" style="text-align:center;font-family:'Poppins',sans-serif;color:#8b5f7f;font-size:0.85rem;margin-bottom:20px;">Activa las opciones que quieras incluir en tu prompt</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+<div class="adv-card" data-field="spacing" style="background:white;padding:14px;border-radius:20px;border:2px solid #ffb6d9;">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+<label class="adv-label" data-key="spacing_label" style="font-family:'Fredoka',sans-serif;color:#ff1493;font-weight:700;font-size:0.9rem;">📏 Espaciado de Letras</label>
+<label style="display:flex;align-items:center;gap:5px;cursor:pointer;">
+<input type="checkbox" class="adv-check" data-field="spacing" style="width:18px;height:18px;accent-color:#ff1493;">
+<span class="adv-inc" style="font-size:0.7rem;color:#666;font-family:'Poppins',sans-serif;">Incluir</span>
+</label>
+</div>
+<select class="adv-select" data-field="spacing" style="width:100%;padding:8px;border:2px solid #ffb6d9;border-radius:12px;font-family:'Poppins',sans-serif;color:#ff1493;background:white;font-size:0.85rem;">
+<option value="ultra-tight" data-en="ultra tight letter spacing" data-es-label="Muy Apretado" data-en-label="Ultra Tight">Muy Apretado</option>
+<option value="tight" data-en="tight letter spacing" data-es-label="Apretado" data-en-label="Tight">Apretado</option>
+<option value="normal" data-en="normal letter spacing" data-es-label="Normal" data-en-label="Normal">Normal</option>
+<option value="wide" data-en="wide letter spacing" data-es-label="Amplio" data-en-label="Wide">Amplio</option>
+<option value="custom" data-en="CUSTOM" data-es-label="Personalizado" data-en-label="Custom">Personalizado</option>
+</select>
+<input type="text" class="adv-custom" data-field="spacing" placeholder="Escribe tu opción..." style="display:none;width:100%;margin-top:8px;padding:8px;border:2px dashed #ff69b4;border-radius:12px;font-family:'Poppins',sans-serif;color:#ff1493;font-size:0.85rem;">
+</div>
+
+<div class="adv-card" data-field="shape" style="background:white;padding:14px;border-radius:20px;border:2px solid #ffb6d9;">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+<label class="adv-label" data-key="shape_label" style="font-family:'Fredoka',sans-serif;color:#ff1493;font-weight:700;font-size:0.9rem;">🌊 Forma de Palabra</label>
+<label style="display:flex;align-items:center;gap:5px;cursor:pointer;">
+<input type="checkbox" class="adv-check" data-field="shape" style="width:18px;height:18px;accent-color:#ff1493;">
+<span class="adv-inc" style="font-size:0.7rem;color:#666;font-family:'Poppins',sans-serif;">Incluir</span>
+</label>
+</div>
+<select class="adv-select" data-field="shape" style="width:100%;padding:8px;border:2px solid #ffb6d9;border-radius:12px;font-family:'Poppins',sans-serif;color:#ff1493;background:white;font-size:0.85rem;">
+<option value="straight" data-en="straight line word shape" data-es-label="Línea Recta" data-en-label="Straight Line">Línea Recta</option>
+<option value="arch-up" data-en="arch up curved word shape" data-es-label="Arco Arriba" data-en-label="Arch Up">Arco Arriba</option>
+<option value="arch-down" data-en="arch down curved word shape" data-es-label="Arco Abajo" data-en-label="Arch Down">Arco Abajo</option>
+<option value="wave" data-en="wavy flowing word shape" data-es-label="Onda" data-en-label="Wave">Onda</option>
+<option value="diagonal" data-en="diagonal tilted word shape" data-es-label="Diagonal" data-en-label="Diagonal">Diagonal</option>
+<option value="custom" data-en="CUSTOM" data-es-label="Personalizado" data-en-label="Custom">Personalizado</option>
+</select>
+<input type="text" class="adv-custom" data-field="shape" placeholder="Escribe tu opción..." style="display:none;width:100%;margin-top:8px;padding:8px;border:2px dashed #ff69b4;border-radius:12px;font-family:'Poppins',sans-serif;color:#ff1493;font-size:0.85rem;">
+</div>
+
+<div class="adv-card" data-field="stack" style="background:white;padding:14px;border-radius:20px;border:2px solid #ffb6d9;">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+<label class="adv-label" data-key="stack_label" style="font-family:'Fredoka',sans-serif;color:#ff1493;font-weight:700;font-size:0.9rem;">📚 Apilamiento</label>
+<label style="display:flex;align-items:center;gap:5px;cursor:pointer;">
+<input type="checkbox" class="adv-check" data-field="stack" style="width:18px;height:18px;accent-color:#ff1493;">
+<span class="adv-inc" style="font-size:0.7rem;color:#666;font-family:'Poppins',sans-serif;">Incluir</span>
+</label>
+</div>
+<select class="adv-select" data-field="stack" style="width:100%;padding:8px;border:2px solid #ffb6d9;border-radius:12px;font-family:'Poppins',sans-serif;color:#ff1493;background:white;font-size:0.85rem;">
+<option value="single" data-en="single line composition" data-es-label="Una Línea" data-en-label="Single Line">Una Línea</option>
+<option value="multi" data-en="multi line composition" data-es-label="Varias Líneas" data-en-label="Multi Line">Varias Líneas</option>
+<option value="stacked" data-en="stacked block composition" data-es-label="Bloque Apilado" data-en-label="Stacked Block">Bloque Apilado</option>
+<option value="custom" data-en="CUSTOM" data-es-label="Personalizado" data-en-label="Custom">Personalizado</option>
+</select>
+<input type="text" class="adv-custom" data-field="stack" placeholder="Escribe tu opción..." style="display:none;width:100%;margin-top:8px;padding:8px;border:2px dashed #ff69b4;border-radius:12px;font-family:'Poppins',sans-serif;color:#ff1493;font-size:0.85rem;">
+</div>
+
+<div class="adv-card" data-field="ratio" style="background:white;padding:14px;border-radius:20px;border:2px solid #ffb6d9;">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+<label class="adv-label" data-key="ratio_label" style="font-family:'Fredoka',sans-serif;color:#ff1493;font-weight:700;font-size:0.9rem;">📐 Relación de Aspecto</label>
+<label style="display:flex;align-items:center;gap:5px;cursor:pointer;">
+<input type="checkbox" class="adv-check" data-field="ratio" style="width:18px;height:18px;accent-color:#ff1493;">
+<span class="adv-inc" style="font-size:0.7rem;color:#666;font-family:'Poppins',sans-serif;">Incluir</span>
+</label>
+</div>
+<select class="adv-select" data-field="ratio" style="width:100%;padding:8px;border:2px solid #ffb6d9;border-radius:12px;font-family:'Poppins',sans-serif;color:#ff1493;background:white;font-size:0.85rem;">
+<option value="4:5" data-en="4:5" data-es-label="4:5 (Instagram)" data-en-label="4:5 (Instagram)">4:5 (Instagram)</option>
+<option value="1:1" data-en="1:1" data-es-label="1:1 (Cuadrado)" data-en-label="1:1 (Square)">1:1 (Cuadrado)</option>
+<option value="9:16" data-en="9:16" data-es-label="9:16 (TikTok/Stories)" data-en-label="9:16 (TikTok/Stories)">9:16 (TikTok/Stories)</option>
+<option value="16:9" data-en="16:9" data-es-label="16:9 (YouTube)" data-en-label="16:9 (YouTube)">16:9 (YouTube)</option>
+</select>
+</div>
+
+<div class="adv-card" data-field="mockup" style="background:white;padding:14px;border-radius:20px;border:2px solid #ffb6d9;">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+<label class="adv-label" data-key="mockup_label" style="font-family:'Fredoka',sans-serif;color:#ff1493;font-weight:700;font-size:0.9rem;">👕 Vista Mockup</label>
+<label style="display:flex;align-items:center;gap:5px;cursor:pointer;">
+<input type="checkbox" class="adv-check" data-field="mockup" style="width:18px;height:18px;accent-color:#ff1493;">
+<span class="adv-inc" style="font-size:0.7rem;color:#666;font-family:'Poppins',sans-serif;">Incluir</span>
+</label>
+</div>
+<select class="adv-select" data-field="mockup" style="width:100%;padding:8px;border:2px solid #ffb6d9;border-radius:12px;font-family:'Poppins',sans-serif;color:#ff1493;background:white;font-size:0.85rem;">
+<option value="standalone" data-en="standalone design" data-es-label="Diseño Solo" data-en-label="Standalone Design">Diseño Solo</option>
+<option value="white-tee" data-en="printed on a white t-shirt mockup" data-es-label="En Camiseta Blanca" data-en-label="On a White T-Shirt">En Camiseta Blanca</option>
+<option value="black-tee" data-en="printed on a black t-shirt mockup" data-es-label="En Camiseta Negra" data-en-label="On a Black T-Shirt">En Camiseta Negra</option>
+<option value="poster" data-en="as a printed poster mockup" data-es-label="Como Poster" data-en-label="As a Poster">Como Poster</option>
+<option value="hoodie" data-en="printed on a hoodie mockup" data-es-label="En Sudadera" data-en-label="On a Hoodie">En Sudadera</option>
+<option value="custom" data-en="CUSTOM" data-es-label="Personalizado" data-en-label="Custom">Personalizado</option>
+</select>
+<input type="text" class="adv-custom" data-field="mockup" placeholder="Escribe tu opción..." style="display:none;width:100%;margin-top:8px;padding:8px;border:2px dashed #ff69b4;border-radius:12px;font-family:'Poppins',sans-serif;color:#ff1493;font-size:0.85rem;">
+</div>
+
+<div class="adv-card" data-field="addons" style="background:white;padding:14px;border-radius:20px;border:2px solid #ffb6d9;">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+<label class="adv-label" data-key="addons_label" style="font-family:'Fredoka',sans-serif;color:#ff1493;font-weight:700;font-size:0.9rem;">✨ Efectos Extra</label>
+<label style="display:flex;align-items:center;gap:5px;cursor:pointer;">
+<input type="checkbox" class="adv-check" data-field="addons" style="width:18px;height:18px;accent-color:#ff1493;">
+<span class="adv-inc" style="font-size:0.7rem;color:#666;font-family:'Poppins',sans-serif;">Incluir</span>
+</label>
+</div>
+<select class="adv-select" data-field="addons" style="width:100%;padding:8px;border:2px solid #ffb6d9;border-radius:12px;font-family:'Poppins',sans-serif;color:#ff1493;background:white;font-size:0.85rem;">
+<option value="none" data-en="no extra effects" data-es-label="Ninguno" data-en-label="None">Ninguno</option>
+<option value="chains" data-en="gold chains hanging over letters" data-es-label="Cadenas de Oro" data-en-label="Gold Chains">Cadenas de Oro</option>
+<option value="rhinestones" data-en="diamond rhinestones bedazzled on letters" data-es-label="Diamantes Pegados" data-en-label="Diamond Rhinestones">Diamantes Pegados</option>
+<option value="crown" data-en="crown on top of letters" data-es-label="Corona Encima" data-en-label="Crown Top">Corona Encima</option>
+<option value="drip" data-en="graffiti drip effect on letters" data-es-label="Efecto Goteo Graffiti" data-en-label="Graffiti Drip">Efecto Goteo Graffiti</option>
+<option value="fire" data-en="fire flame effect on letters" data-es-label="Efecto de Fuego" data-en-label="Fire Effect">Efecto de Fuego</option>
+<option value="custom" data-en="CUSTOM" data-es-label="Personalizado" data-en-label="Custom">Personalizado</option>
+</select>
+<input type="text" class="adv-custom" data-field="addons" placeholder="Escribe tu opción..." style="display:none;width:100%;margin-top:8px;padding:8px;border:2px dashed #ff69b4;border-radius:12px;font-family:'Poppins',sans-serif;color:#ff1493;font-size:0.85rem;">
+</div>
+
+</div>
+</div>
+<!-- END ADVANCED CONFIG SECTION -->
+
+<div class="mb-10"><div class="w-full max-w-md mx-auto">
+<div class="flex flex-col sm:flex-row gap-3 mb-3">
+<input type="text" id="generatorInput" placeholder="Tu palabra aquí..." maxlength="20" class="input-candy flex-1 px-6 py-3 rounded-xl text-lg text-center">
+<button id="generateBtn" class="btn-generate px-8 py-3 rounded-xl text-white font-bold">Generar 🚀</button>
+</div>
+<div id="phraseNote" class="phrase-note">✍️ Este estilo acepta frases completas</div>
+<button id="clearBtn" class="btn-clear w-full px-6 py-3 rounded-xl font-medium mt-2">🗑️ Limpiar</button>
+</div></div>
+
+<div id="promptOutput" class="hidden mb-10 space-y-4 max-w-2xl mx-auto">
+<h3 id="prompts-title" class="text-lg font-bold text-center mb-6" style="font-family:'Montserrat',sans-serif;color:#333;">📋 Tus Prompts</h3>
+<div id="promptsList" class="space-y-3"></div>
+<div class="warning-box"><span id="warning-text">⚠️ IMPORTANTE:</span> <span id="warning-content">Prompts optimizados para Canva AI, Midjourney e Ideograma.</span></div>
+</div>
+
+<div class="mb-6 max-w-3xl mx-auto p-6 shadow-xl" style="background:linear-gradient(135deg,rgba(255,200,220,0.5),rgba(255,255,255,0.8));border:3px solid #ffb3d9;border-radius:30px;">
+<h3 id="tips-title" class="text-lg font-bold mb-4 text-center" style="color:#ff1493;font-family:'Montserrat',sans-serif;">💡 Tips</h3>
+<div id="tips-content" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+</div>
+
+<div class="baby-footer">
+<p class="footer-tool-name">🎨 Baby Boss — Text Creation Studio</p>
+<p id="footer-follow" class="footer-follow">Síguenos</p>
+<div class="footer-social-btns">
+<a href="https://www.tiktok.com/@johannadigitalseattle" target="_blank" class="footer-social-btn">TikTok</a>
+<a href="https://pinterest.com/johannadigitalseattle" target="_blank" class="footer-social-btn">Pinterest</a>
+</div>
+<p class="footer-legal">© 2026 <a href="https://johadigitalseattle.com" target="_blank">johadigitalseattle.com</a> — <span id="footer-norental">Prohibida la reventa</span></p>
+</div>
+
+</div>
+</div>
+</div>
+
+<script>
+const S_CAT_DATA={
+"s_bubble":{
+emoji:"🫧",
+title_es:"🫧 Bubble & Inflado",title_en:"🫧 Bubble & Inflated",
+sub_es:"Letras infladas suaves y redondeadas",sub_en:"Soft rounded inflated letters",
+styles:[
+["bubble-graffiti","🫧","Bubble","Bubble","Letras tipo burbuja","Bubble-type letters"],
+["candy-puffy","🍬","Candy","Candy","Globo kawaii dulce","Sweet kawaii balloon"],
+["rainbow-bubble","🌈","Rainbow","Rainbow","Burbujas de colores","Rainbow colored bubbles"],
+]},
+"s_chrome":{
+emoji:"💎",
+title_es:"💎 Chrome & Metálico",title_en:"💎 Chrome & Metallic",
+sub_es:"Letras con acabado metálico brillante",sub_en:"Shiny metallic finish letters",
+styles:[
+["glossy-3d","💎","Chrome","Chrome","Chrome rosa dorado 3D","3D rose gold chrome"],
+["metallic-shine","✨","Gold","Gold","Dorado metálico brillante","Shiny metallic gold"],
+["liquid-style","💧","Liquid","Liquid","Metal líquido tipo mercurio","Liquid mercury metal"],
+]},
+"s_y2k":{
+emoji:"🌈",
+title_es:"🌈 Holográfico & Y2K",title_en:"🌈 Holographic & Y2K",
+sub_es:"Efectos iridiscentes y futuristas",sub_en:"Iridescent futuristic effects",
+styles:[
+["retro-y2k","🪩","Y2K","Y2K","Jelly transparente 2000s","Transparent 2000s jelly"],
+["holographic","🌈","Holo","Holo","Holográfico tornasol","Iridescent holographic"],
+["unicorn-chrome","🦄","Unicorn","Unicorn","Chrome Y2K con diamantes NUEVO","Y2K chrome with diamonds NEW"],
+]},
+"s_neon":{
+emoji:"⚡",
+title_es:"⚡ Neón",title_en:"⚡ Neon",
+sub_es:"Letras luminosas que brillan",sub_en:"Luminous glowing letters",
+styles:[
+["neon-glow","⚡","Neon","Neon","Neón eléctrico brillante","Bright electric neon"],
+]},
+"s_street":{
+emoji:"🔥",
+title_es:"🔥 Urbano & Street",title_en:"🔥 Urban & Street",
+sub_es:"Estilo callejero rock y graffiti",sub_en:"Street rock and graffiti",
+styles:[
+["wildstyle","🎨","Graffiti","Graffiti","Graffiti callejero","Street graffiti"],
+["grunge-style","💀","Grunge","Grunge","Rock urbano roto","Broken urban rock"],
+["fire-style","🔥","Fire","Fire","Letras con llamas","Letters with flames"],
+["pixel-style","👾","Pixel","Pixel","8-bit videojuego","8-bit videogame"],
+]},
+"s_soft":{
+emoji:"☁️",
+title_es:"☁️ Soft & Pastel",title_en:"☁️ Soft & Pastel",
+sub_es:"Acabado suave y delicado",sub_en:"Soft delicate finish",
+styles:[
+["pastel-soft","☁️","Pastel","Pastel","Pastel acuarela suave","Soft watercolor pastel"],
+]},
+"s_sticker":{
+emoji:"💅",
+title_es:"💅 Stickers",title_en:"💅 Stickers",
+sub_es:"Diseños tipo pegatina",sub_en:"Sticker-type designs",
+styles:[
+["sticker-lettering","💗","Sticker","Sticker","Rosa clásico borde blanco","Classic pink white border"],
+["sticker-clean","🖊️","Script","Script","Cursiva elegante","Elegant cursive"],
+["sticker-holo","✨","Glitter","Glitter","Con brillo holográfico","With holographic glitter"],
+]},
+"s_glam":{
+emoji:"👑",
+title_es:"👑 Glam & Diva",title_en:"👑 Glam & Diva",
+sub_es:"Estilos glamurosos con brillo",sub_en:"Glamorous sparkle styles",
+styles:[
+["drag-glam","👑","Drag","Drag","Drag queen con diamantes","Drag queen with diamonds"],
+["retro-groovy","🕺","Retro","Retro","Retro disco Studio 54","Retro Studio 54 disco"],
+["disco-glam","🪩","Disco","Disco","Bola de disco años 70","70s disco ball"],
+["urban-glam","💅","Glam","Glam","Urbano bold con sombra","Urban bold with shadow"],
+["funky-pop","🌸","Funky","Funky","Pop art colorido","Colorful pop art"],
+["boss-gold","💰","Boss Gold","Boss Gold","Oro 24K lujo real NUEVO","24K gold royal luxury NEW"],
+]},
+"s_cute":{
+emoji:"🎀",
+title_es:"🎀 Coquette & Cute",title_en:"🎀 Coquette & Cute",
+sub_es:"Estética femenina tierna",sub_en:"Tender feminine aesthetic",
+styles:[
+["coquette","🎀","Coquette","Coquette","Letras con lazo coquette","Letters with coquette bow"],
+["letter-art","💕","Hearts","Hearts","Letras forma de corazón","Heart-shaped letters"],
+["pattern-letters","🎭","Pattern","Pattern","Patrones mezclados","Mixed patterns"],
+["teddy-plush","🧸","Teddy","Teddy","Peluche fuzzy suave NUEVO","Soft fuzzy plush NEW"],
+]},
+"s_sport":{
+emoji:"🏆",
+title_es:"🏆 Sport & Varsity",title_en:"🏆 Sport & Varsity",
+sub_es:"Deportivo universitario",sub_en:"University athletic",
+styles:[
+["varsity","🏆","Varsity","Varsity","Universitario deportivo","University athletic"],
+]},
+"s_patch":{
+emoji:"🧶",
+title_es:"🧶 Chenille Patch",title_en:"🧶 Chenille Patch",
+sub_es:"Parches bordados tipo tela",sub_en:"Fabric embroidered patches",
+styles:[
+["chenille-gold","🧶","Patch Gold","Patch Gold","Parche borde dorado","Patch gold border"],
+["chenille-color","🎗️","Patch Color","Patch Color","Parche borde color","Patch color border"],
+["granpa-patch","👴","Granpa Patch","Granpa Patch","Parche vintage estilo abuelo NUEVO","Vintage grandpa patch style NEW"],
+]},
+};
+const A_CAT_DATA={
+"a_money":{
+emoji:"💰",
+title_es:"💰 Dinero & Lujo",title_en:"💰 Money & Luxury",
+sub_es:"Dinero, carteras y lujo",sub_en:"Money, purses and luxury",
+accs:[
+["cash","💵","Cash","Cash"],
+["money-bag","💰","Money Bag","Money Bag"],
+["pink-purse","👛","Pink Purse","Pink Purse"],
+["handbag","👜","Handbag","Handbag"],
+]},
+"a_crown":{
+emoji:"👑",
+title_es:"👑 Coronas & Joyas",title_en:"👑 Crowns & Jewels",
+sub_es:"Coronas, diamantes y joyería",sub_en:"Crowns, diamonds and jewelry",
+accs:[
+["crowns","👑","Crowns","Crowns"],
+["royal-crown","👑","Royal Crown","Royal Crown"],
+["diamonds","💎","Diamonds","Diamonds"],
+["crystals","💎","Crystals","Crystals"],
+["gem-mix","💎","Gem Mix","Gem Mix"],
+["diamond-ring","💍","Diamond Ring","Diamond Ring"],
+["crystal-light","🔮","Crystal Ball","Crystal Ball"],
+["chains","⛓️","Chains","Chains"],
+]},
+"a_hearts":{
+emoji:"💝",
+title_es:"💝 Corazones & Lazos",title_en:"💝 Hearts & Bows",
+sub_es:"Corazones, lazos y detalles tiernos",sub_en:"Hearts, bows and cute details",
+accs:[
+["hearts","💕","Hearts","Hearts"],
+["fuzzy-hearts","💝","Fuzzy Hearts","Fuzzy Hearts"],
+["bows","🎀","Bows","Bows"],
+["big-bow","🎀","Big Bow","Big Bow"],
+["ribbons","🎗️","Ribbons","Ribbons"],
+["pom-poms","🧸","Pom Poms","Pom Poms"],
+["feathers","🪶","Feathers","Feathers"],
+["flowers","🌸","Flowers","Flowers"],
+["butterflies","🦋","Butterfly","Butterfly"],
+]},
+"a_sparkle":{
+emoji:"✨",
+title_es:"✨ Brillo & Estrellas",title_en:"✨ Sparkle & Stars",
+sub_es:"Estrellas, brillo y destellos",sub_en:"Stars, sparkle and shine",
+accs:[
+["stars","⭐","Stars","Stars"],
+["sparkles","🌟","Sparkles","Sparkles"],
+["glitter","✨","Glitter","Glitter"],
+["starbursts","💥","Burst","Burst"],
+["holo-foil","🌈","Holo Foil","Holo Foil"],
+["plus-signs","✚","Plus","Plus"],
+]},
+"a_urban":{
+emoji:"🔥",
+title_es:"🔥 Urbano & Efectos",title_en:"🔥 Urban & Effects",
+sub_es:"Fuego, rayos y efectos urbanos",sub_en:"Fire, lightning and urban effects",
+accs:[
+["flames","🔥","Flames","Flames"],
+["drips","💧","Drips","Drips"],
+["gold-drip","💧","Gold Drip","Gold Drip"],
+["lightning","⚡","Lightning","Lightning"],
+["waves","🌊","Waves","Waves"],
+["smoke","🌫️","Smoke","Smoke"],
+["bombs","💣","Bombs","Bombs"],
+["controller","🕹️","Controller","Controller"],
+["tags","🖊️","Tags","Tags"],
+]},
+"a_props":{
+emoji:"🤠",
+title_es:"🤠 Props & Estilo",title_en:"🤠 Props & Style",
+sub_es:"Accesorios temáticos y props",sub_en:"Themed accessories and props",
+accs:[
+["cowboy-hat","🤠","Cowboy Hat","Cowboy Hat"],
+["cowboy-boots","👢","Boots","Boots"],
+["parasol","☂️","Parasol","Parasol"],
+["graduation-cap","🎓","Grad Cap","Grad Cap"],
+["diploma","📜","Diploma","Diploma"],
+]},
+"a_sport":{
+emoji:"🏀",
+title_es:"🏀 Deportes",title_en:"🏀 Sports",
+sub_es:"Pelotas y accesorios deportivos",sub_en:"Sports balls and gear",
+accs:[
+["basketball","🏀","Basketball","Basketball"],
+["soccer-ball","⚽","Soccer","Soccer"],
+["tennis-ball","🎾","Tennis","Tennis"],
+]},
+"a_girly":{
+emoji:"💅",
+title_es:"💅 Girly Essentials",title_en:"💅 Girly Essentials",
+sub_es:"Belleza, moda y tecnología girly",sub_en:"Beauty, fashion and girly tech",
+accs:[
+["lipstick","💄","Lipstick","Lipstick"],
+["nail-polish","💅","Nail Polish","Nail Polish"],
+["high-heel","👠","High Heel","High Heel"],
+["sunglasses","🕶️","Sunglasses","Sunglasses"],
+["iphone","📱","iPhone","iPhone"],
+["ipad","💻","iPad","iPad"],
+["retro-phone","☎️","Retro Phone","Retro Phone"],
+["pink-pencil-gems","✏️","Pink Pencil","Pink Pencil"],
+]},
+"a_custom":{
+emoji:"🎨",
+title_es:"🎨 Custom",title_en:"🎨 Custom",
+sub_es:"Escribe tu propio accesorio",sub_en:"Write your own accessory",
+accs:[
+["custom-acc","🎨","Custom","Custom"],
+]},
+};
+const STYLE_TO_CAT={
+"bubble-graffiti":"s_bubble",
+"candy-puffy":"s_bubble",
+"rainbow-bubble":"s_bubble",
+"glossy-3d":"s_chrome",
+"metallic-shine":"s_chrome",
+"liquid-style":"s_chrome",
+"retro-y2k":"s_y2k",
+"holographic":"s_y2k",
+"unicorn-chrome":"s_y2k",
+"neon-glow":"s_neon",
+"wildstyle":"s_street",
+"grunge-style":"s_street",
+"fire-style":"s_street",
+"pixel-style":"s_street",
+"pastel-soft":"s_soft",
+"sticker-lettering":"s_sticker",
+"sticker-clean":"s_sticker",
+"sticker-holo":"s_sticker",
+"drag-glam":"s_glam",
+"retro-groovy":"s_glam",
+"disco-glam":"s_glam",
+"urban-glam":"s_glam",
+"funky-pop":"s_glam",
+"boss-gold":"s_glam",
+"coquette":"s_cute",
+"letter-art":"s_cute",
+"pattern-letters":"s_cute",
+"teddy-plush":"s_cute",
+"varsity":"s_sport",
+"chenille-gold":"s_patch",
+"chenille-color":"s_patch",
+"granpa-patch":"s_patch",
+};
+
+const PHRASE_STYLES=["sticker-lettering","sticker-clean","sticker-holo","retro-groovy","urban-glam","drag-glam","varsity","disco-glam","funky-pop","letter-art","pattern-letters","coquette","chenille-gold","chenille-color","rainbow-bubble","unicorn-chrome","boss-gold","teddy-plush","granpa-patch"];
+
+const styleVisualDNA={
+"bubble-graffiti":{en:"inflated bubble letters, smooth rounded edges, glossy plastic toy surface, soft white highlight on top of each letter, thick soft outline, gentle drop shadow, NO metal NO chrome NO sharp edges"},
+"glossy-3d":{en:"bold 3D letters with warm rose gold and champagne metallic finish, iridescent color-shifting surface from rose gold to purple to teal, warm pink gradient with glossy mirror reflection, deep beveled 3D extrusion, luxury feminine aesthetic, NO cold silver NO industrial look"},
+"retro-y2k":{en:"translucent jelly plastic letters, iridescent Y2K surface, holographic shimmer, cyber pink and blue palette, early 2000s digital aesthetic, bubbly futuristic vibe"},
+"candy-puffy":{en:"super inflated kawaii balloon letters, shiny smooth rubber balloon texture, glossy highlight streak on top of each letter, round plump letterforms like inflated balloons, cute 3D depth with soft shadow underneath, NO fabric NO velvet NO matte"},
+"metallic-shine":{en:"warm golden champagne metallic finish, directional glowing light streak on letter surface, brushed gold texture, luxury brand aesthetic, warm amber highlight, NOT cold silver NOT chrome"},
+"neon-glow":{en:"neon tube light letters, electric glow halo around each letter, DARK BACKGROUND REQUIRED, single vivid electric color per letter, neon sign aesthetic, NO light backgrounds NO metal"},
+"pastel-soft":{en:"soft watercolor pastel letters, dreamy matte finish, NO gloss NO shine NO metal NO chrome NO dark colors, gentle gradient, airy delicate kawaii style"},
+"wildstyle":{en:"graffiti wildstyle letters, THICK BLACK OUTLINE, interlocking vivid colored letters, urban street art, paint drips at bottom, spray paint splatter, BLACK BACKGROUND, NO pastel"},
+"holographic":{en:"holographic prismatic letters, rainbow color shift diffraction effect, iridescent foil texture, flat metallic surface refracting light into spectrum, NO single color NO matte"},
+"fire-style":{en:"letters made of fire and flames, orange red yellow gradient, flame tips extending upward from letters, glowing ember core, heat distortion effect, DARK SMOKY BACKGROUND, NO cool colors NO pastel"},
+"grunge-style":{en:"distressed grunge letters, cracked worn texture, rough urban concrete or BRICK WALL visible through letters, paint peeling effect, raw industrial dark aesthetic, NO clean edges NO pastel"},
+"liquid-style":{en:"liquid mercury letters, molten metal flowing effect, surface tension droplets, wet glossy chrome reflection, fluid letterforms appearing to drip, NO matte NO fire NO flat surface"},
+"pixel-style":{en:"8-bit pixel art letters, retro video game typography, VISIBLE SQUARE PIXELS, limited color palette, arcade game aesthetic, scanline overlay, 80s console style, NO smooth edges NO 3D"},
+"sticker-lettering":{en:"cute bold bubble script lettering sticker design, thick rounded letters, hot pink vibrant letters on solid black organic blob shape background, large decorative swashes and flourishes, small black hearts scattered, thick white sticker die-cut border, white outer background, vector illustration style, high contrast, feminine trendy"},
+"sticker-clean":{en:"elegant clean script lettering sticker design, fluid calligraphy style, black letters on soft blush pink solid fill background, long decorative swash underneath text, single small gold crown accent, thick white clean sticker border, minimal decoration, sophisticated feminine aesthetic, vector style"},
+"sticker-holo":{en:"cute bold script lettering sticker design, hot pink letters with holographic iridescent glitter effect, rainbow shimmer and sparkle frost texture, prismatic light reflection, holographic foil finish, solid black organic blob background, large decorative swashes, small hearts scattered, extra glitter sparkles, thick white sticker die-cut border, vector style, high contrast"},
+"retro-groovy":{en:"retro Studio 54 disco typography, bold wavy seventies-style letters, shimmering silver glitter texture with flowing undulating curves, letters glow with swirling stage lights, adorned with sparkling sequins and metallic details, tiny retro stars and diamond sparkles dancing around text, solid black background, disco ball reflections, theatrical flair, vintage glamour"},
+"urban-glam":{en:"urban glam bold script lettering, thick rounded letters, hot pink to soft lavender white gradient fill inside letters, very thick solid black shadow creating dramatic depth, glossy inner shine effect, large dominant feminine composition, urban aesthetic, high contrast, transparent background"},
+"drag-glam":{en:"glamorous drag queen logo typography, flowing script lettering with dramatic flourishes, shimmering pink and lilac gradient transitioning from deep magenta to soft lavender, crystalline diamonds catching light with prismatic reflections scattered throughout, diamond accents framing letters in crown-like arrangement, royal drag queen aesthetic, luxurious sparkle on each letter"},
+"varsity":{en:"large varsity style athletic block font, bold chunky letters filled with vibrant rainbow glitter texture, sparkling galaxy effect inside letters, bright electric blue or neon outline glow, high contrast, centered composition, trendy retro athletic aesthetic, sticker style, transparent background, print ready"},
+"disco-glam":{en:"retro disco-inspired bold wavy seventies typography, shimmering lilac or pastel glitter texture with flowing undulating curves, letters glowing brilliantly bathed in swirling stage lights, adorned with sparkling colored sequins and metallic details, tiny retro stars and diamond-shaped sparkles dancing around text, solid black background, disco ball reflections, pure seventies glamour"},
+"funky-pop":{en:"colorful typographic design, letters filled with various vivid colors with golden outline effect around each letter, decorative elements: small stars flowers and smiley faces scattered throughout, casual hand-drawn quality with slightly uneven letter spacing, vintage retro aesthetic, dark gray or white background, playful and joyful composition"},
+"letter-art":{en:"glittery pink letters forming a heart-shaped cat face or creative shape silhouette, shimmering typography forming recognizable figure, sweet heart-shaped silhouette framing the design, centered against deep black background, subtle diffused glow radiating outward, delicate sparkling starbursts and light particles dancing around composition, whimsical magical t-shirt design"},
+"pattern-letters":{en:"large chunky bubble letters each filled with different patterns and colors: gingham, leopard print, checkerboard, floral motifs, puzzle pieces and sparkles surrounding text, glossy vibrant girly aesthetic, golden outline on each letter, clean illustration style, centered composition, solid white or pastel background"},
+"coquette":{en:"maximalist coquette aesthetic typography, thick bubbly letters filled with eclectic mixed patterns including pink gingham, gold leopard print, black-and-white checkerboard and tiny floral motifs, large oversized pink and white plaid bow at top as signature element, high-contrast coquette aesthetic, bright pastel and glittery gold color palette, crisp vector-style illustration for sublimation, feminine maximalist"},
+"chenille-gold":{en:"chenille embroidered patch letters, fuzzy fluffy velvet loop texture covering letter surface, thick sparkling gold glitter outline border surrounding each letter, thin white inner border between fuzzy letter and gold glitter outline, soft dimensional raised patch look, solid pastel color fuzzy fill inside letters, transparent background, sublimation ready, iron-on chenille patch aesthetic, NO smooth NO chrome NO gradients"},
+"chenille-color":{en:"chenille embroidered patch letters, fuzzy fluffy velvet loop texture covering letter surface, thick bold outline border same color as letter but much darker and more saturated version, double outline effect with deeper richer color intensity, dimensional raised patch look, solid color fuzzy fill matching outline family, soft shadow underneath patch, transparent background, sublimation ready, varsity chenille patch aesthetic, NO gold NO glitter NO gradients"},
+"rainbow-bubble":{en:"rainbow multicolor bubble letters, each individual letter filled with different pastel color: pink sky blue mint green lilac soft yellow peach, glossy 3D inflation effect on every letter, bright white specular highlight streak on top of each letter, thick white outline cleanly separating each colored letter, kawaii cute playful aesthetic, mixed script and bubble lettering styles, cheerful colorful composition, transparent background"},
+"unicorn-chrome":{en:"ENORMOUS extremely thick massive chunky dimensional 3D bubble letters with EXTREME volume and depth, made from highly reflective liquid chrome with intense iridescent holographic finish shifting through vibrant pink magenta lavender cyan electric blue silver with maximum rainbow prismatic reflections, letters wrapped with large sparkling rhinestones and crystal gemstones along every edge, intense diamond highlights, glossy jewelry reflections, oversized elegant crystal rhinestone frame surrounding the typography, luxury Y2K glam aesthetic maximum opulence, feminine futuristic playful, ultra-detailed hyper-realistic 3D lettering mirror-polished chrome holographic reflections ultra-realistic gemstones, dramatic cinematic studio lighting with high contrast and intense specular highlights, centered symmetrical composition front-facing, premium commercial product photography quality, photorealistic render"},
+"boss-gold":{en:"MASSIVE enormously thick extremely bold dimensional 3D sculptural letters crafted from highly polished 24K gold with INTENSE depth and multiple layers of carved gold detail, EXTREMELY ornate letters completely encrusted and covered with luxurious diamond pave surface and HUNDREDS of large brilliant multicolored gemstones embedded throughout the letters including vivid rubies emerald sapphires amethysts topaz, elaborate gold filigree ornamental baroque details with diamond stars and jewelry decorations, molten liquid gold dripping lavishly beneath and from edges of letters, OVERSIZED royal crown integrated with the composition, royal luxury extreme wealth power opulence aesthetic maximum visual impact, dramatic cinematic lighting with intense jewelry sparkle and realistic gold specular reflections, hyper ultra-detailed photorealistic gemstones with light refraction, premium high-end jewelry advertising photography quality, photorealistic 3D render maximum detail, centered symmetrical front-facing composition"},
+"teddy-plush":{en:"MASSIVE enormously thick extremely chunky dimensional 3D bubble letters physically made from soft fluffy teddy-bear plush fabric with EXTREMELY visible hyper-realistic fibers and intense plush fuzzy texture, letters have maximum volume and depth with soft rounded puffy forms, decorative glossy stitched edging along letter outlines with visible thread detail, cute luxury handcrafted premium plush sculpture aesthetic maximum opulence, feminine playful aspirational dreamy, soft diffused studio lighting enhancing realistic plush fibers and fabric texture, high-end product photography quality, extremely detailed hyper-realistic 3D render, centered front-facing composition, premium commercial quality"},
+"granpa-patch":{en:"Embroidered iron-on vintage grandpa-core patch of the text, letters in medium bold varsity collegiate style arranged in a curved upward arch, middle letters taller than outer letters, letters packed tight together almost touching, each letter filled with small gingham checkered fabric pattern with cozy linen weave texture, thick satin stitched rope border around each letter, SUBTLE lightly weathered worn-in authentic look with a few small loose thread wisps dangling naturally from corners (just a tasteful hint of realism, not messy or torn), warm cottagecore grandfather vintage aesthetic, cozy fall autumn vibes, high quality embroidered appliqué patch, soft natural lighting, pure white background, photorealistic ultra-detailed 3D render"}
+};
+
+const colorDesc={
+"hot-pink":"hot pink deep magenta gradient",
+"barbie-pink":"iconic Barbie hot pink vivid saturated color",
+"pure-black":"solid pure black color",
+"pure-white":"clean pure white color",
+"cotton-candy":"soft sky blue and baby pink cotton candy gradient",
+"lavender":"soft purple lavender and lilac gradient",
+"bubblegum":"pink and blue bubblegum gradient",
+"peach":"warm peach coral orange gradient",
+"mint":"fresh mint green and teal gradient",
+"butter":"soft butter yellow and cream gradient",
+"orchid":"deep orchid purple and violet gradient",
+"neon":"electric neon pink and cyan high contrast",
+"holo-gradient":"holographic rainbow prismatic gradient",
+"sunset-fire":"sunset orange red and amber fire gradient",
+"ocean-vibes":"deep ocean blue and aqua teal gradient",
+"electric-dream":"electric purple and hot pink vivid gradient",
+"sakura-bloom":"delicate sakura blossom pink gradient",
+"lime-punch":"electric lime green and yellow gradient",
+"grape-soda":"deep grape purple and magenta gradient",
+"rose-gold":"warm rose gold and champagne gradient",
+"cyber-pink":"cyber hot pink and neon red gradient",
+"aqua-mint":"aqua blue and mint green gradient",
+"golden-honey":"warm golden honey and amber gradient",
+"cream-to-pink":"warm cream to vibrant hot pink gradient",
+"pink-to-lilac":"hot pink to soft lilac purple gradient",
+"silver-chrome":"cool silver and chrome metallic gradient",
+"magenta-purple":"deep magenta to rich purple gradient"
+};
+
+const accDesc={
+"diamonds":"sparkling diamond gems floating",
+"stars":"shining golden stars scattered",
+"glitter":"glitter particles and sparkle dust",
+"hearts":"3D candy hearts floating",
+"crowns":"golden royal crowns above letters",
+"sparkles":"bright sparkle bursts and light flares",
+"chains":"heavy metal chain links",
+"starbursts":"explosive starburst shapes",
+"flowers":"blooming flowers with petals",
+"bows":"silk ribbon bows",
+"ribbons":"flowing silk ribbons",
+"feathers":"soft feathers floating",
+"butterflies":"colorful butterflies flying",
+"crystals":"crystal gemstones and faceted jewels",
+"holo-foil":"holographic foil confetti pieces",
+"plus-signs":"decorative plus cross symbols",
+"flames":"fire flames and ember sparks",
+"drips":"paint drips falling from letters",
+"lightning":"electric lightning bolt strikes",
+"waves":"fluid water wave shapes",
+"bombs":"graffiti bomb shapes",
+"controller":"retro game controller pixel icons",
+"smoke":"dark smoke wisps curling",
+"tags":"graffiti signature spray tags",
+"cash":"floating dollar bills and money rain",
+"lipstick":"designer lipstick tubes floating",
+"handbag":"luxury designer handbags",
+"iphone":"pink iPhone floating",
+"retro-phone":"vintage pink retro telephone",
+"cowboy-hat":"pink cowboy hat floating",
+"cowboy-boots":"pink cowboy boots",
+"crystal-light":"prismatic crystal light reflections and rainbow refractions",
+"parasol":"pink parasol floating",
+"graduation-cap":"black graduation cap with gold tassel",
+"diploma":"rolled diploma tied with ribbon",
+"big-bow":"oversized pink and white plaid bow",
+"basketball":"orange basketball floating",
+"soccer-ball":"black and white soccer ball floating",
+"tennis-ball":"yellow tennis ball floating",
+"money-bag":"pink money bag with dollar sign",
+"pink-purse":"luxury pink designer purse floating",
+"fuzzy-hearts":"soft fluffy pink plush hearts",
+"pom-poms":"soft pink fluffy pom pom balls",
+"royal-crown":"royal gold crown encrusted with gemstones",
+"diamond-ring":"sparkling diamond engagement ring",
+"gem-mix":"mixed colorful gemstones rubies sapphires emeralds amethysts",
+"gold-drip":"molten gold liquid dripping",
+"nail-polish":"pink nail polish bottle floating",
+"high-heel":"pink stiletto high heel shoe",
+"sunglasses":"trendy pink sunglasses floating",
+"ipad":"pink iPad tablet floating",
+"pink-pencil-gems":"luxury pink pencil decorated with gemstones and crystals",
+"custom-acc":"CUSTOM_ACC"
+};
+
+const bgDesc={
+"pink-bokeh":"soft pink bokeh light circles on blush background",
+"holo-shift":"holographic color-shifting gradient background",
+"candy-marble":"candy pink and blue marble swirl background",
+"black-puddle":"deep black background with wet floor reflection",
+"rainbow-gradient":"full spectrum rainbow gradient background",
+"glittery-pink":"glittery sparkling pink background",
+"aurora":"northern lights aurora borealis background",
+"bubble-wrap":"soft bubble texture pink background",
+"starry-night":"deep dark starry night sky background",
+"cotton-clouds":"soft white and pink cotton cloud sky background",
+"brick-wall":"urban red brick wall texture background",
+"soft-mist":"neutral soft gray mist background minimal and clean",
+"smoke-dark":"dark smoky gray atmospheric background",
+"lava-flow":"dark orange red molten lava flow background",
+"neon-grid":"dark background with glowing neon perspective grid lines",
+"pure-black":"solid pure black background",
+"pure-white":"clean solid white background transparent-ready",
+"purple-glam":"deep rich purple to violet glamorous background"
+};
+
+const translations={
+es:{subtitle:"Generador de Textos Impresionantes",styles_title:"\u2728 Estilos",colors_title:"\ud83c\udfa8 Colores",accessories_title:"\u2728 Accesorios (Elige hasta 4)",backgrounds_title:"\ud83c\udfa8 Fondos",input_placeholder:"Tu palabra aqu\u00ed...",input_placeholder_phrase:"Escribe tu frase \u2014 ej: Laker Girl",generate_btn:"Generar \ud83d\ude80",clear_btn:"\ud83d\uddd1\ufe0f Limpiar",prompts_title:"\ud83d\udccb Prompts Virales",tips_title:"\ud83d\udca1 Tips",copied:"\u2713 \u00a1Copiado!",accessories_count:"Elegidos:",warning_text:"\u26a0\ufe0f IMPORTANTE:",warning_content:"Prompts optimizados para Canva AI, Midjourney e Ideograma.",canva_ai_label:"\ud83c\udfa8 Canva AI",ideograma_label:"\ud83c\udf08 Ideograma",midjourney_label:"\ud83c\udfad Midjourney",phrase_note:"\u270d\ufe0f Este estilo acepta frases completas \u2014 ej: Laker Girl",footer_follow:"S\u00edguenos",footer_norental:"Prohibida la reventa",custom_label:"\u270f\ufe0f Escribe tu color en ingl\u00e9s:",custom_placeholder:"ej: royal blue, forest green...",advanced_title:"\u2699\ufe0f Configuraci\u00f3n Avanzada",advanced_subtitle:"Activa las opciones que quieras incluir en tu prompt",include_label:"Incluir",custom_option_placeholder:"Escribe tu opci\u00f3n...",spacing_label:"\ud83d\udccf Espaciado de Letras",shape_label:"\ud83c\udf0a Forma de Palabra",stack_label:"\ud83d\udcda Apilamiento",ratio_label:"\ud83d\udcd0 Relaci\u00f3n de Aspecto",mockup_label:"\ud83d\udc55 Vista Mockup",addons_label:"\u2728 Efectos Extra",tips:[
+{title:"\u2728 Combos Perfectos",items:["\ud83e\uddf6 CHENILLE GOLD: Hot Pink + Basketball","\ud83c\udf97\ufe0f CHENILLE COLOR: Grape + Stars + Blanco","\ud83c\udf08 RAINBOW: Hearts + Stars + Blanco","\ud83e\ude9a DISCO: Magenta + Sparkles + Negro"]},
+{title:"\ud83d\ude80 Tips Virales",items:["CHENILLE siempre fondo blanco","NEON siempre fondo negro","Frases completas en 15 estilos","CUSTOM: escribe tu color favorito"]},
+{title:"\ud83c\udfa8 Estilos Nuevos",items:["\ud83e\uddf6 CHENILLE GOLD: Parche dorado","\ud83c\udf97\ufe0f CHENILLE COLOR: Parche color intenso","\ud83c\udf08 RAINBOW BUBBLE: Letras multicolor","\ud83c\udfc0 Accesorios: Basketball, Soccer, Tennis"]}
+]},
+en:{subtitle:"Stunning Text Generator",styles_title:"\u2728 Styles",colors_title:"\ud83c\udfa8 Colors",accessories_title:"\u2728 Accessories (Choose up to 4)",backgrounds_title:"\ud83c\udfa8 Backgrounds",input_placeholder:"Your word here...",input_placeholder_phrase:"Write your phrase \u2014 e.g. Laker Girl",generate_btn:"Generate \ud83d\ude80",clear_btn:"\ud83d\uddd1\ufe0f Clear",prompts_title:"\ud83d\udccb Viral Prompts",tips_title:"\ud83d\udca1 Tips",copied:"\u2713 Copied!",accessories_count:"Chosen:",warning_text:"\u26a0\ufe0f IMPORTANT:",warning_content:"Prompts optimized for Canva AI, Midjourney and Ideograma.",canva_ai_label:"\ud83c\udfa8 Canva AI",ideograma_label:"\ud83c\udf08 Ideograma",midjourney_label:"\ud83c\udfad Midjourney",phrase_note:"\u270d\ufe0f This style accepts full phrases \u2014 e.g. Laker Girl",footer_follow:"Follow us",footer_norental:"Resale prohibited",custom_label:"\u270f\ufe0f Type your color in English:",custom_placeholder:"e.g. royal blue, forest green...",advanced_title:"\u2699\ufe0f Advanced Settings",advanced_subtitle:"Enable the options you want to include in your prompt",include_label:"Include",custom_option_placeholder:"Type your option...",spacing_label:"\ud83d\udccf Letter Spacing",shape_label:"\ud83c\udf0a Word Shape",stack_label:"\ud83d\udcda Word Stack",ratio_label:"\ud83d\udcd0 Aspect Ratio",mockup_label:"\ud83d\udc55 Mockup View",addons_label:"\u2728 Add-Ons",tips:[
+{title:"\u2728 Perfect Combos",items:["\ud83e\uddf6 CHENILLE GOLD: Hot Pink + Basketball","\ud83c\udf97\ufe0f CHENILLE COLOR: Grape + Stars + White","\ud83c\udf08 RAINBOW: Hearts + Stars + White","\ud83e\ude9a DISCO: Magenta + Sparkles + Black"]},
+{title:"\ud83d\ude80 Viral Tips",items:["CHENILLE always white background","NEON always dark background","Full phrases in 15 styles","CUSTOM: type your favorite color"]},
+{title:"\ud83c\udfa8 New Styles",items:["\ud83e\uddf6 CHENILLE GOLD: Gold glitter patch","\ud83c\udf97\ufe0f CHENILLE COLOR: Bold color patch","\ud83c\udf08 RAINBOW BUBBLE: Multicolor letters","\ud83c\udfc0 Accessories: Basketball, Soccer, Tennis"]}
+]}
+};
+
+let currentLanguage='es';
+let currentStyle='bubble-graffiti';
+let currentColor='hot-pink';
+let currentAccessories=['diamonds'];
+let currentBackground='pink-bokeh';
+
+function updateAccessoriesCount(){
+  document.getElementById('accessories-count').textContent=translations[currentLanguage].accessories_count+' '+currentAccessories.length;
+}
+
+function updatePhraseNote(s){
+  const note=document.getElementById('phraseNote');
+  const inp=document.getElementById('generatorInput');
+  if(PHRASE_STYLES.indexOf(s)!==-1){
+    note.textContent=translations[currentLanguage].phrase_note;
+    note.classList.add('visible');
+    inp.placeholder=translations[currentLanguage].input_placeholder_phrase;
+    inp.maxLength=60;
+  }else{
+    note.classList.remove('visible');
+    inp.placeholder=translations[currentLanguage].input_placeholder;
+    inp.maxLength=20;
+  }
+}
+
+const recommendations={
+"bubble-graffiti":{colors:["hot-pink","cotton-candy","lavender"],accessories:["crowns","hearts","bows"],backgrounds:["pink-bokeh","cotton-clouds"]},
+"glossy-3d":{colors:["rose-gold","golden-honey","cream-to-pink"],accessories:["diamonds","crystals","cash"],backgrounds:["black-puddle","purple-glam"]},
+"retro-y2k":{colors:["bubblegum","electric-dream","cyber-pink"],accessories:["stars","holo-foil","iphone"],backgrounds:["holo-shift","rainbow-gradient"]},
+"candy-puffy":{colors:["peach","butter","mint","lavender"],accessories:["bows","flowers","hearts"],backgrounds:["cotton-clouds","pink-bokeh"]},
+"metallic-shine":{colors:["golden-honey","rose-gold","silver-chrome"],accessories:["crowns","diamonds","sparkles"],backgrounds:["black-puddle","smoke-dark"]},
+"neon-glow":{colors:["neon","lime-punch","cyber-pink","aqua-mint"],accessories:["lightning","starbursts","glitter"],backgrounds:["black-puddle","starry-night","neon-grid"]},
+"pastel-soft":{colors:["butter","peach","lavender","mint"],accessories:["flowers","bows","butterflies"],backgrounds:["cotton-clouds","soft-mist"]},
+"wildstyle":{colors:["neon","lime-punch","electric-dream"],accessories:["drips","chains","bombs"],backgrounds:["black-puddle","brick-wall"]},
+"holographic":{colors:["holo-gradient","electric-dream","aqua-mint"],accessories:["holo-foil","crystals","diamonds"],backgrounds:["holo-shift","aurora"]},
+"fire-style":{colors:["sunset-fire","cyber-pink","golden-honey"],accessories:["flames","starbursts","lightning"],backgrounds:["lava-flow","black-puddle"]},
+"grunge-style":{colors:["electric-dream","grape-soda","neon"],accessories:["drips","chains","bombs"],backgrounds:["brick-wall","black-puddle"]},
+"liquid-style":{colors:["aqua-mint","holo-gradient","electric-dream"],accessories:["waves","drips","crystals"],backgrounds:["black-puddle","aurora"]},
+"pixel-style":{colors:["electric-dream","lime-punch","cyber-pink"],accessories:["controller","lightning","starbursts"],backgrounds:["neon-grid","black-puddle"]},
+"sticker-lettering":{colors:["hot-pink","cyber-pink","barbie-pink"],accessories:["hearts","sparkles","bows"],backgrounds:["soft-mist","pure-white"]},
+"sticker-clean":{colors:["hot-pink","sakura-bloom","lavender"],accessories:["crowns","bows","lipstick"],backgrounds:["soft-mist","pure-white"]},
+"sticker-holo":{colors:["holo-gradient","pink-to-lilac","sakura-bloom"],accessories:["holo-foil","glitter","crystal-light"],backgrounds:["soft-mist","pure-white"]},
+"retro-groovy":{colors:["silver-chrome","magenta-purple","electric-dream"],accessories:["stars","sparkles","glitter"],backgrounds:["pure-black","smoke-dark"]},
+"urban-glam":{colors:["pink-to-lilac","hot-pink","magenta-purple"],accessories:["crowns","diamonds","cash"],backgrounds:["soft-mist","purple-glam"]},
+"drag-glam":{colors:["pink-to-lilac","magenta-purple","holo-gradient"],accessories:["crowns","diamonds","lipstick"],backgrounds:["purple-glam","black-puddle"]},
+"varsity":{colors:["holo-gradient","electric-dream","lime-punch"],accessories:["starbursts","crowns","cash"],backgrounds:["pure-black","pure-white"]},
+"disco-glam":{colors:["magenta-purple","silver-chrome","pink-to-lilac"],accessories:["stars","sparkles","crystal-light"],backgrounds:["pure-black","purple-glam"]},
+"funky-pop":{colors:["hot-pink","lime-punch","golden-honey"],accessories:["flowers","stars","iphone"],backgrounds:["pure-white","soft-mist"]},
+"letter-art":{colors:["hot-pink","sakura-bloom","magenta-purple"],accessories:["hearts","sparkles","bows"],backgrounds:["pure-black","purple-glam"]},
+"pattern-letters":{colors:["hot-pink","golden-honey","electric-dream"],accessories:["sparkles","glitter","crowns"],backgrounds:["pure-white","soft-mist"]},
+"coquette":{colors:["sakura-bloom","hot-pink","barbie-pink"],accessories:["big-bow","graduation-cap","diploma"],backgrounds:["pure-white","pink-bokeh"]},
+"chenille-gold":{colors:["hot-pink","barbie-pink","sakura-bloom","lavender"],accessories:["basketball","stars","sparkles","soccer-ball"],backgrounds:["pure-white","soft-mist","cotton-clouds"]},
+"chenille-color":{colors:["grape-soda","electric-dream","sunset-fire","ocean-vibes"],accessories:["basketball","stars","starbursts","soccer-ball"],backgrounds:["pure-white","soft-mist","cotton-clouds"]},
+"rainbow-bubble":{colors:["hot-pink","cotton-candy","mint"],accessories:["hearts","stars","sparkles","tennis-ball"],backgrounds:["pure-white","soft-mist","pink-bokeh"]},
+"unicorn-chrome":{colors:["holo-gradient","pink-to-lilac","barbie-pink","neon"],accessories:["diamonds","crystals","sparkles","holo-foil"],backgrounds:["pure-black","black-puddle","purple-glam"]},
+"boss-gold":{colors:["golden-honey","rose-gold","barbie-pink"],accessories:["crowns","diamonds","cash","crystals"],backgrounds:["pure-black","black-puddle","purple-glam"]},
+"teddy-plush":{colors:["sakura-bloom","hot-pink","barbie-pink","cream-to-pink"],accessories:["hearts","bows","big-bow","flowers"],backgrounds:["pure-white","pink-bokeh","cotton-clouds"]},
+"granpa-patch":{colors:["golden-honey","burgundy","millennial-pink"],accessories:["fuzzy-hearts","bows","flowers","pom-poms"],backgrounds:["pure-white","soft-mist","cotton-clouds"]}
+};
+
+function applyRecommendations(s){
+  const oldBadges=document.querySelectorAll('.rec-badge');
+  oldBadges.forEach(function(b){b.remove();});
+  const oldRec=document.querySelectorAll('.recommended-item');
+  oldRec.forEach(function(e){e.classList.remove('recommended-item');});
+  const r=recommendations[s];
+  if(!r) return;
+  document.querySelectorAll('.color-btn').forEach(function(b){
+    if(r.colors.indexOf(b.dataset.color)!==-1){
+      b.classList.add('recommended-item');
+      const x=document.createElement('span');
+      x.className='rec-badge';
+      x.textContent='\u2b50';
+      b.parentElement.appendChild(x);
+    }
+  });
+  document.querySelectorAll('.accessory-btn').forEach(function(b){
+    if(r.accessories.indexOf(b.dataset.accessory)!==-1){
+      b.classList.add('recommended-item');
+      const x=document.createElement('span');
+      x.className='rec-badge';
+      x.textContent='\u2b50';
+      b.parentElement.appendChild(x);
+    }
+  });
+  document.querySelectorAll('.background-btn').forEach(function(b){
+    if(r.backgrounds.indexOf(b.dataset.background)!==-1){
+      b.classList.add('recommended-item');
+      const x=document.createElement('span');
+      x.className='rec-badge';
+      x.textContent='\u2b50';
+      b.parentElement.appendChild(x);
+    }
+  });
+}
+
+function updateLanguage(lang){
+  currentLanguage=lang;
+  const t=translations[lang];
+  document.getElementById('subtitle').textContent=t.subtitle;
+  document.getElementById('styles-title').textContent=t.styles_title;
+  document.getElementById('colors-title').textContent=t.colors_title;
+  document.getElementById('accessories-title').textContent=t.accessories_title;
+  document.getElementById('backgrounds-title').textContent=t.backgrounds_title;
+  document.getElementById('generateBtn').textContent=t.generate_btn;
+  document.getElementById('clearBtn').textContent=t.clear_btn;
+  document.getElementById('prompts-title').textContent=t.prompts_title;
+  document.getElementById('tips-title').textContent=t.tips_title;
+  document.getElementById('warning-text').textContent=t.warning_text;
+  document.getElementById('warning-content').textContent=t.warning_content;
+  document.getElementById('footer-follow').textContent=t.footer_follow;
+  document.getElementById('footer-norental').textContent=t.footer_norental;
+  document.getElementById('custom-label').textContent=t.custom_label;
+  document.getElementById('custom-color-input').placeholder=t.custom_placeholder;
+  // Advanced section translations
+  const advTitleEl=document.getElementById('advanced-title');
+  const advSubEl=document.getElementById('advanced-subtitle');
+  if(advTitleEl) advTitleEl.textContent=t.advanced_title;
+  if(advSubEl) advSubEl.textContent=t.advanced_subtitle;
+  const advLabels={
+    spacing:t.spacing_label,
+    shape:t.shape_label,
+    stack:t.stack_label,
+    ratio:t.ratio_label,
+    mockup:t.mockup_label,
+    addons:t.addons_label
+  };
+  document.querySelectorAll('.adv-label').forEach(function(lbl){
+    const card=lbl.closest('.adv-card');
+    if(card){
+      const field=card.dataset.field;
+      if(advLabels[field]) lbl.textContent=advLabels[field];
+    }
+  });
+  document.querySelectorAll('.adv-inc').forEach(function(s){s.textContent=t.include_label;});
+  document.querySelectorAll('.adv-custom').forEach(function(inp){inp.placeholder=t.custom_option_placeholder;});
+  document.querySelectorAll('.adv-select').forEach(function(sel){
+    for(let i=0;i<sel.options.length;i++){
+      const opt=sel.options[i];
+      const label=lang==='es'?opt.dataset.esLabel:opt.dataset.enLabel;
+      if(label) opt.textContent=label;
+    }
+  });
+  const tc=document.getElementById('tips-content');
+  tc.innerHTML='';
+  t.tips.forEach(function(s){
+    const box=document.createElement('div');
+    box.className='bg-white p-4 rounded-lg shadow-md';
+    box.style.cssText='border-left:4px solid #ff69b4;';
+    const title=document.createElement('p');
+    title.style.cssText='color:#ff1493;font-family:Fredoka,sans-serif;font-weight:bold;font-size:0.9rem;margin-bottom:8px;';
+    title.textContent=s.title;
+    const ul=document.createElement('ul');
+    ul.style.cssText='list-style:none;padding:0;margin:0;';
+    s.items.forEach(function(item){
+      const li=document.createElement('li');
+      li.style.cssText='color:#666;font-family:Poppins,sans-serif;font-size:0.8rem;line-height:1.5;margin-bottom:4px;';
+      li.textContent='\u2713 '+item;
+      ul.appendChild(li);
+    });
+    box.appendChild(title);
+    box.appendChild(ul);
+    tc.appendChild(box);
+  });
+  
+  CURRENT_LANG = lang;
+  // Update style category labels
+  document.querySelectorAll('.cat-cell-label-s').forEach(function(el){
+    const txt = lang==='es' ? el.dataset.es : el.dataset.en;
+    if(txt) el.textContent = txt;
+  });
+  // Update accessory category labels
+  document.querySelectorAll('.cat-cell-label-a').forEach(function(el){
+    const txt = lang==='es' ? el.dataset.es : el.dataset.en;
+    if(txt) el.textContent = txt;
+  });
+  // Update hint texts
+  const sh = document.getElementById('styles-hint');
+  if(sh) sh.textContent = lang==='es' ? 'Toca una categoría para ver los estilos' : 'Tap a category to see styles';
+  const ah = document.getElementById('accessories-hint');
+  if(ah) ah.textContent = lang==='es' ? 'Toca una categoría para ver los accesorios' : 'Tap a category to see accessories';
+  // Update selected label
+  document.querySelectorAll('.selected-label').forEach(function(el){
+    const txt = lang==='es' ? el.dataset.es : el.dataset.en;
+    if(txt) el.textContent = txt;
+  });
+  // Update custom accessory label and placeholder
+  const cal = document.getElementById('custom-acc-label');
+  if(cal) cal.textContent = lang==='es' ? '✏️ Escribe tu accesorio en inglés:' : '✏️ Type your accessory in English:';
+  const cai = document.getElementById('custom-acc-input');
+  if(cai) cai.placeholder = lang==='es' ? 'ej: butterflies, cherries...' : 'e.g. butterflies, cherries...';
+  // Re-render open categories
+  if(currentStyleCat) renderStyleCategory(currentStyleCat);
+  if(currentAccCat) renderAccCategory(currentAccCat);
+  // Update counts and displays
+  
+
+
+
+
+  if(typeof updateAccCount === 'function') updateAccCount();
+  if(typeof updateSelectedStyleDisplay === 'function') updateSelectedStyleDisplay();
+
+  document.getElementById('langEN').classList.toggle('active',lang==='en');
+  document.getElementById('langES').classList.toggle('active',lang==='es');
+  updateAccessoriesCount();
+  updatePhraseNote(currentStyle);
+}
+
+
+// ============ BORDERED STYLES (show border color section) ============
+const BORDERED_STYLES = ["bubble-graffiti","candy-puffy","rainbow-bubble","sticker-lettering","sticker-clean","sticker-holo","chenille-gold","chenille-color","letter-art","coquette","teddy-plush","granpa-patch"];
+
+// Current border color state
+let currentBorderColor = null;
+let currentCustomBorder = '';
+let currentColorBarValue = null;  // hex color from color bar for text
+let currentBorderBarValue = null; // hex color from color bar for border
+
+// Store the color names for each color (for prompt generation)
+const COLOR_NAMES = {
+"royal-blue":"royal blue","emerald":"emerald green","sage-green":"sage green","terracotta":"terracotta orange","coral":"coral pink orange","mauve":"mauve pink purple","burgundy":"burgundy wine red","champagne":"champagne beige gold","millennial-pink":"soft millennial pink","rust-orange":"rust burnt orange","tiffany-blue":"tiffany teal blue","hot-coral":"vibrant hot coral red","mustard":"mustard yellow","blush":"soft blush pink","plum":"deep plum purple","baby-blue":"soft baby blue","neon-green":"electric neon green","fuchsia-neon":"intense fuchsia neon","cherry-red":"deep cherry red","cobalt-blue":"cobalt deep blue"
+};
+const BORDER_COLOR_NAMES = {
+"barbie-pink":"barbie pink","white":"white","black":"black","gold":"gold","silver":"silver chrome","holographic":"holographic iridescent","hot-pink":"hot pink","baby-blue":"baby blue","red":"red","lavender":"lavender purple","mint":"mint green","coral":"coral orange","peach":"peach","royal-blue":"royal blue","emerald":"emerald green","burgundy":"burgundy","rose-gold":"rose gold","tiffany-blue":"tiffany blue","neon-green":"neon green","fuchsia":"fuchsia","yellow":"yellow","orange":"orange","purple":"purple","turquoise":"turquoise","hot-red":"hot bright red","sage":"sage green","mustard":"mustard yellow","plum":"plum purple","cream":"cream white","brown":"chocolate brown"
+};
+
+// ============ SHOW/HIDE BORDER COLOR SECTION ============
+function updateBorderColorVisibility(){
+  const section = document.getElementById('border-colors-section');
+  if(!section) return;
+  if(BORDERED_STYLES.indexOf(currentStyle) !== -1){
+    section.style.display = 'block';
+  }else{
+    section.style.display = 'none';
+    // Reset border selection when hiding
+    currentBorderColor = null;
+    currentBorderBarValue = null;
+    document.querySelectorAll('.border-color-btn').forEach(function(b){b.classList.remove('active');});
+    const box = document.getElementById('custom-border-box');
+    if(box) box.style.display = 'none';
+  }
+}
+
+// ============ BORDER COLOR CLICK HANDLERS ============
+document.querySelectorAll('.border-color-btn').forEach(function(btn){
+  btn.addEventListener('click', function(e){
+    e.preventDefault();
+    const val = btn.dataset.borderColor;
+    // Handle color bar button
+    if(val === 'color-bar'){
+      openColorBarModal('border');
+      return;
+    }
+    // Normal selection
+    document.querySelectorAll('.border-color-btn').forEach(function(b){b.classList.remove('active');});
+    btn.classList.add('active');
+    currentBorderColor = val;
+    currentBorderBarValue = null;
+    // Show/hide custom input box
+    const box = document.getElementById('custom-border-box');
+    if(box){
+      if(val === 'custom-border'){
+        box.style.display = 'block';
+        setTimeout(function(){
+          const inp = document.getElementById('custom-border-input');
+          if(inp) inp.focus();
+        }, 100);
+      }else{
+        box.style.display = 'none';
+      }
+    }
+  });
+});
+
+// ============ COLOR BAR MODAL LOGIC ============
+let currentColorBarMode = 'text'; // 'text' or 'border'
+
+function openColorBarModal(mode){
+  currentColorBarMode = mode;
+  const modal = document.getElementById('color-bar-modal');
+  const title = document.getElementById('color-bar-title');
+  if(title){
+    title.textContent = mode === 'text' ? '🎨 Paleta - Color del Texto' : '🎨 Paleta - Color del Borde';
+  }
+  if(modal){
+    modal.style.display = 'flex';
+    updateColorPreview();
+  }
+}
+
+function closeColorBarModal(){
+  const modal = document.getElementById('color-bar-modal');
+  if(modal) modal.style.display = 'none';
+}
+
+function hslToHex(h, s, l){
+  s /= 100; l /= 100;
+  const a = s * Math.min(l, 1-l);
+  const f = n => {
+    const k = (n + h/30) % 12;
+    const color = l - a * Math.max(Math.min(k-3, 9-k, 1), -1);
+    return Math.round(255 * color).toString(16).padStart(2,'0');
+  };
+  return '#' + f(0) + f(8) + f(4);
+}
+
+function updateColorPreview(){
+  const hue = document.getElementById('color-hue-slider');
+  const light = document.getElementById('color-light-slider');
+  const preview = document.getElementById('color-preview');
+  if(!hue || !light || !preview) return;
+  const h = parseInt(hue.value);
+  const l = parseInt(light.value);
+  const hex = hslToHex(h, 85, l);
+  preview.style.background = hex;
+  preview.textContent = hex.toUpperCase();
+}
+
+// Setup color bar listeners once DOM is ready
+setTimeout(function(){
+  const hue = document.getElementById('color-hue-slider');
+  const light = document.getElementById('color-light-slider');
+  if(hue) hue.addEventListener('input', updateColorPreview);
+  if(light) light.addEventListener('input', updateColorPreview);
+  
+  const cancelBtn = document.getElementById('color-bar-cancel');
+  if(cancelBtn) cancelBtn.addEventListener('click', closeColorBarModal);
+  
+  const applyBtn = document.getElementById('color-bar-apply');
+  if(applyBtn){
+    applyBtn.addEventListener('click', function(){
+      const preview = document.getElementById('color-preview');
+      const hex = preview ? preview.textContent : '#FF1493';
+      if(currentColorBarMode === 'text'){
+        // Set text color bar
+        currentColorBarValue = hex;
+        currentColor = 'color-bar';
+        // Highlight the color bar button in text colors
+        document.querySelectorAll('.color-btn').forEach(function(b){b.classList.remove('active');});
+        const barBtn = document.querySelector('.color-btn[data-color="color-bar"]');
+        if(barBtn){
+          barBtn.classList.add('active');
+          // Update its background to show selected color
+          barBtn.style.background = hex;
+        }
+      }else{
+        // Set border color bar
+        currentBorderBarValue = hex;
+        currentBorderColor = 'color-bar';
+        document.querySelectorAll('.border-color-btn').forEach(function(b){b.classList.remove('active');});
+        const barBtn = document.querySelector('.border-color-btn[data-border-color="color-bar"]');
+        if(barBtn){
+          barBtn.classList.add('active');
+          barBtn.style.background = hex;
+        }
+      }
+      closeColorBarModal();
+    });
+  }
+  
+  // Close modal on background click
+  const modal = document.getElementById('color-bar-modal');
+  if(modal){
+    modal.addEventListener('click', function(e){
+      if(e.target === modal) closeColorBarModal();
+    });
+  }
+}, 500);
+
+// ============ ADD COLOR BAR HANDLER TO TEXT COLOR BUTTONS ============
+// Intercept the color-bar button in text colors
+setTimeout(function(){
+  const textBarBtn = document.querySelector('.color-btn[data-color="color-bar"]');
+  if(textBarBtn){
+    textBarBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      openColorBarModal('text');
+    });
+  }
+}, 600);
+
+
+function generatePrompts(userText){
+  const t=translations[currentLanguage];
+  const isPhrase=PHRASE_STYLES.indexOf(currentStyle)!==-1;
+  const text=isPhrase?userText:userText.toUpperCase();
+  const styleEN=styleVisualDNA[currentStyle]?styleVisualDNA[currentStyle].en:currentStyle;
+  let cD;
+  if(currentColor==='custom'){
+    const cv=document.getElementById('custom-color-input').value.trim();
+    cD=cv?cv+' color':'vibrant custom color';
+  }else if(currentColor==='color-bar' && currentColorBarValue){
+    cD='vibrant '+currentColorBarValue+' color';
+  }else{
+    cD=colorDesc[currentColor]||currentColor;
+  }
+  const bD=bgDesc[currentBackground]||currentBackground;
+  const aD=currentAccessories.map(function(a){
+    if(a==='custom-acc'){
+      const custInput=document.getElementById('custom-acc-input');
+      const custVal=custInput?custInput.value.trim():'';
+      return custVal?custVal:'custom decoration';
+    }
+    return accDesc[a]||a;
+  }).join(', ');
+  // Compute border color description if applicable
+  let borderDesc = '';
+  if(BORDERED_STYLES.indexOf(currentStyle) !== -1 && currentBorderColor){
+    let borderName = '';
+    if(currentBorderColor === 'custom-border'){
+      const bInp = document.getElementById('custom-border-input');
+      borderName = bInp ? bInp.value.trim() : '';
+    }else if(currentBorderColor === 'color-bar' && currentBorderBarValue){
+      borderName = currentBorderBarValue;
+    }else{
+      borderName = BORDER_COLOR_NAMES[currentBorderColor] || currentBorderColor;
+    }
+    if(borderName){
+      borderDesc = ', with vivid ' + borderName + ' outline border around each letter';
+    }
+  }
+  // Compute text color name if color-bar was used
+  let colorBarDesc = '';
+  if(currentColor === 'color-bar' && currentColorBarValue){
+    colorBarDesc = currentColorBarValue;
+  }
+
+  // Extract active advanced config
+  const advParts=[];
+  let advRatio='3:4';
+  document.querySelectorAll('.adv-check').forEach(function(chk){
+    if(chk.checked){
+      const field=chk.dataset.field;
+      const select=document.querySelector('.adv-select[data-field="'+field+'"]');
+      const opt=select.options[select.selectedIndex];
+      let value=opt.dataset.en;
+      if(value==='CUSTOM'){
+        const customInput=document.querySelector('.adv-custom[data-field="'+field+'"]');
+        value=customInput?customInput.value.trim():'';
+      }
+      if(field==='ratio' && value){
+        advRatio=value;
+      }else if(value){
+        advParts.push(value);
+      }
+    }
+  });
+  const advText=advParts.length>0?' | ADVANCED: '+advParts.join(', '):'';
+  const advTextCanva=advParts.length>0?' Advanced settings: '+advParts.join(', ')+'.':'';
+  const advTextMJ=advParts.length>0?', '+advParts.join(', '):'';
+
+  let canvaPrompt,ideogramaPrompt,midjourneyPrompt;
+  if(isPhrase){
+    canvaPrompt=styleEN+' with the phrase "'+text+'". Decorative elements: '+aD+'. Color palette: '+cD+'.'+borderDesc.replace(/^,\s*/,' ')+(borderDesc?'.':'')+advTextCanva+' Viral design 2025-2026.';
+    ideogramaPrompt='Typography design with phrase "'+text+'" | STYLE: '+styleEN+' | COLOR: '+cD+' | DECORATIVE ELEMENTS: '+aD+(borderDesc?' | BORDER: '+borderDesc.replace(/^,\s*/,''):'')+' | High contrast vector, white die-cut border'+advText+' | Trending aesthetic 2025-2026';
+    midjourneyPrompt='"'+text+'" typography design, '+styleEN+', '+cD+', '+aD+' decorations'+borderDesc+', transparent background, vector style'+advTextMJ+' --style raw --ar '+advRatio+' --v 6 --q 2';
+  }else{
+    canvaPrompt='TEXT GRAPHIC of the word "'+text+'" | LETTER STYLE: '+styleEN+' | LETTER COLOR: '+cD+(borderDesc?' | LETTER BORDER: '+borderDesc.replace(/^,\s*/,''):'')+' | FLOATING DECORATIONS: '+aD+' | BACKGROUND: '+bD+' | Text is MAIN SUBJECT large and centered'+advText+' | Viral typography art 2025-2026 | 4K quality';
+    ideogramaPrompt='TYPOGRAPHY ART: large bold letters spelling "'+text+'" | STYLE: '+styleEN+' | COLOR on letters: '+cD+(borderDesc?' | LETTER BORDER: '+borderDesc.replace(/^,\s*/,''):'')+' | DECORATIVE ELEMENTS: '+aD+' | BACKGROUND: '+bD+' | Text fills frame as primary subject'+advText+' | Trending aesthetic 2025-2026 | Ultra detailed 8K';
+    midjourneyPrompt='"'+text+'" bold text graphic, '+styleEN+', '+cD+' color palette, '+aD+borderDesc+', '+bD+' background'+advTextMJ+' --style raw --ar '+advRatio+' --v 6 --q 2';
+  }
+  const promptsList=document.getElementById('promptsList');
+  promptsList.innerHTML='';
+  const items=[
+    {label:t.canva_ai_label,text:canvaPrompt},
+    {label:t.ideograma_label,text:ideogramaPrompt},
+    {label:t.midjourney_label,text:midjourneyPrompt}
+  ];
+  items.forEach(function(item){
+    const card=document.createElement('div');
+    card.className='prompt-card';
+    const h4=document.createElement('h4');
+    h4.style.cssText='color:#ff1493;font-family:Montserrat,sans-serif;font-weight:bold;margin-bottom:12px;';
+    h4.textContent=item.label;
+    const inner=document.createElement('div');
+    inner.style.cssText='background:#f9f9f9;padding:16px;border-radius:8px;border:2px solid #ffb3d9;';
+    const p=document.createElement('p');
+    p.style.cssText='color:#666;font-family:Poppins,sans-serif;line-height:1.6;word-break:break-word;font-size:0.9rem;margin:0 0 12px 0;';
+    p.textContent=item.text;
+    const btn=document.createElement('button');
+    btn.className='copy-btn';
+    btn.textContent=currentLanguage==='es'?'Copiar':'Copy';
+    btn.addEventListener('click',function(){
+      navigator.clipboard.writeText(item.text).then(function(){
+        btn.textContent=t.copied;
+        setTimeout(function(){btn.textContent=currentLanguage==='es'?'Copiar':'Copy';},2000);
+      }).catch(function(){btn.textContent='Error';});
+    });
+    inner.appendChild(p);
+    inner.appendChild(btn);
+    card.appendChild(h4);
+    card.appendChild(inner);
+    promptsList.appendChild(card);
+  });
+  document.getElementById('promptOutput').classList.remove('hidden');
+}
+
+document.getElementById('langEN').addEventListener('click',function(e){
+  e.preventDefault();
+  updateLanguage('en');
+});
+
+document.getElementById('langES').addEventListener('click',function(e){
+  e.preventDefault();
+  updateLanguage('es');
+});
+
+document.querySelectorAll('.adv-select').forEach(function(sel){
+  sel.addEventListener('change',function(){
+    const field=sel.dataset.field;
+    const customInput=document.querySelector('.adv-custom[data-field="'+field+'"]');
+    if(customInput){
+      if(sel.value==='custom'){
+        customInput.style.display='block';
+        setTimeout(function(){customInput.focus();},100);
+      }else{
+        customInput.style.display='none';
+      }
+    }
+  });
+});
+
+// Style buttons now rendered dynamically in renderStyleCategory()
+
+document.querySelectorAll('.color-btn').forEach(function(btn){
+  btn.addEventListener('click',function(e){
+    e.preventDefault();
+    document.querySelectorAll('.color-btn').forEach(function(b){b.classList.remove('active');});
+    btn.classList.add('active');
+    currentColor=btn.dataset.color;
+    const box=document.getElementById('custom-color-box');
+    if(btn.dataset.color==='custom'){
+      box.style.display='block';
+      setTimeout(function(){document.getElementById('custom-color-input').focus();},100);
+    }else{
+      box.style.display='none';
+    }
+  });
+});
+
+// Accessory buttons now rendered dynamically in renderAccCategory()
+
+document.querySelectorAll('.background-btn').forEach(function(btn){
+  btn.addEventListener('click',function(e){
+    e.preventDefault();
+    document.querySelectorAll('.background-btn').forEach(function(b){b.classList.remove('active');});
+    btn.classList.add('active');
+    currentBackground=btn.dataset.background;
+  });
+});
+
+document.getElementById('generateBtn').addEventListener('click',function(e){
+  e.preventDefault();
+  const text=document.getElementById('generatorInput').value.trim();
+  if(text) generatePrompts(text);
+});
+
+document.getElementById('clearBtn').addEventListener('click',function(e){
+  e.preventDefault();
+  document.getElementById('generatorInput').value='';
+  document.getElementById('promptOutput').classList.add('hidden');
+});
+
+document.getElementById('generatorInput').addEventListener('keypress',function(e){
+  if(e.key==='Enter'){
+    e.preventDefault();
+    const text=e.target.value.trim();
+    if(text) generatePrompts(text);
+  }
+});
+
+
+let CURRENT_LANG = 'es';
+let currentStyleCat = null;  // which style category is open
+let currentAccCat = null;    // which accessory category is open
+
+// ======== RENDER STYLES FOR A CATEGORY ========
+function renderStyleCategory(catId){
+  const d = S_CAT_DATA[catId];
+  if(!d) return;
+  const lang = CURRENT_LANG;
+  document.getElementById('s-cat-title').textContent = lang==='es' ? d.title_es : d.title_en;
+  document.getElementById('s-cat-sub').textContent = lang==='es' ? d.sub_es : d.sub_en;
+  const list = document.getElementById('styles-list-s');
+  list.innerHTML = d.styles.map(function(s){
+    const isActive = s[0] === currentStyle;
+    const isNew = s[4].indexOf('NUEVO') !== -1 || s[5].indexOf('NEW') !== -1;
+    const nameTxt = lang==='es' ? s[2] : s[3];
+    let descTxt = lang==='es' ? s[4] : s[5];
+    // Remove the NUEVO/NEW word from description if present (we'll show as a badge)
+    descTxt = descTxt.replace(/\s*NUEVO\s*/g,'').replace(/\s*NEW\s*/g,'').trim();
+    const newBadge = isNew ? '<span class="new-badge-row">' + (lang==='es'?'NUEVO':'NEW') + '</span>' : '';
+    return '<div class="style-row-s'+(isActive?' active':'')+'" data-style="'+s[0]+'">'
+      + '<div class="style-emoji-big">'+s[1]+'</div>'
+      + '<div class="style-info">'
+      + '<span class="style-row-name">'+nameTxt+newBadge+'</span>'
+      + '<span class="style-row-desc">'+descTxt+'</span>'
+      + '</div>'
+      + '<div class="check-icon-s">✓</div>'
+      + '</div>';
+  }).join('');
+  // Bind click handlers
+  list.querySelectorAll('.style-row-s').forEach(function(row){
+    row.addEventListener('click', function(e){
+      e.preventDefault();
+      list.querySelectorAll('.style-row-s').forEach(function(r){r.classList.remove('active');});
+      row.classList.add('active');
+      currentStyle = row.dataset.style;
+      applyRecommendations(currentStyle);
+      updatePhraseNote(currentStyle);
+      updateSelectedStyleDisplay();
+      if(typeof updateBorderColorVisibility === 'function') updateBorderColorVisibility();
+      // Auto-close category after a short delay
+      setTimeout(function(){
+        closeStyleCategory();
+      }, 400);
+    });
+  });
+}
+
+function openStyleCategory(catId){
+  // Close accessory category if open (optional - keeps UI clean)
+  // closeAccCategory();
+  currentStyleCat = catId;
+  document.querySelectorAll('.cat-cell-s').forEach(function(c){c.classList.remove('active');});
+  const cell = document.querySelector('.cat-cell-s[data-s-cat-id="'+catId+'"]');
+  if(cell) cell.classList.add('active');
+  document.getElementById('styles-area-s').style.display = 'block';
+  renderStyleCategory(catId);
+}
+
+function closeStyleCategory(){
+  currentStyleCat = null;
+  document.querySelectorAll('.cat-cell-s').forEach(function(c){c.classList.remove('active');});
+  document.getElementById('styles-area-s').style.display = 'none';
+  updateStyleCatIndicators();
+}
+
+function updateStyleCatIndicators(){
+  // Show a dot on the category that contains the currently selected style
+  const activeCatId = STYLE_TO_CAT[currentStyle];
+  document.querySelectorAll('.cat-cell-s').forEach(function(c){
+    c.classList.remove('has-selected');
+    if(c.dataset.sCatId === activeCatId) c.classList.add('has-selected');
+  });
+}
+
+function updateSelectedStyleDisplay(){
+  const disp = document.getElementById('selected-style-display');
+  const val = document.getElementById('selected-style-value');
+  if(!disp || !val) return;
+  // Find the current style's name
+  const catId = STYLE_TO_CAT[currentStyle];
+  if(!catId){disp.style.display='none';return;}
+  const d = S_CAT_DATA[catId];
+  const s = d.styles.find(function(x){return x[0]===currentStyle;});
+  if(s){
+    const lang = CURRENT_LANG;
+    val.textContent = s[1] + ' ' + (lang==='es' ? s[2] : s[3]);
+    disp.style.display = 'block';
+  }
+}
+
+// Style category cell click
+document.querySelectorAll('.cat-cell-s').forEach(function(cell){
+  cell.addEventListener('click', function(e){
+    e.preventDefault();
+    const catId = cell.dataset.sCatId;
+    if(currentStyleCat === catId){
+      closeStyleCategory();
+    }else{
+      openStyleCategory(catId);
+    }
+  });
+});
+
+// ======== RENDER ACCESSORIES FOR A CATEGORY ========
+function renderAccCategory(catId){
+  const d = A_CAT_DATA[catId];
+  if(!d) return;
+  const lang = CURRENT_LANG;
+  document.getElementById('a-cat-title').textContent = lang==='es' ? d.title_es : d.title_en;
+  document.getElementById('a-cat-sub').textContent = lang==='es' ? d.sub_es : d.sub_en;
+  const list = document.getElementById('accessories-list-a');
+  list.innerHTML = d.accs.map(function(a){
+    const isActive = currentAccessories.indexOf(a[0]) !== -1;
+    const nameTxt = lang==='es' ? a[2] : a[3];
+    const isNew = ['money-bag','pink-purse','fuzzy-hearts','pom-poms','royal-crown','diamond-ring','gem-mix','gold-drip'].indexOf(a[0]) !== -1;
+    const newBadge = isNew ? '<span class="new-badge-row">' + (lang==='es'?'NUEVO':'NEW') + '</span>' : '';
+    return '<div class="style-row-s'+(isActive?' active':'')+'" data-accessory="'+a[0]+'">'
+      + '<div class="style-emoji-big">'+a[1]+'</div>'
+      + '<div class="style-info">'
+      + '<span class="style-row-name">'+nameTxt+newBadge+'</span>'
+      + '</div>'
+      + '<div class="check-icon-s">✓</div>'
+      + '</div>';
+  }).join('');
+  list.querySelectorAll('.style-row-s').forEach(function(row){
+    row.addEventListener('click', function(e){
+      e.preventDefault();
+      const accId = row.dataset.accessory;
+      const idx = currentAccessories.indexOf(accId);
+      if(idx !== -1){
+        // Deselect
+        currentAccessories.splice(idx, 1);
+        row.classList.remove('active');
+        // Hide custom-acc box if deselecting custom
+        if(accId === 'custom-acc'){
+          const box = document.getElementById('custom-acc-box');
+          if(box) box.style.display = 'none';
+        }
+      }else{
+        if(currentAccessories.length >= 4){
+          // Already have 2 - show warning briefly
+          const count = document.getElementById('accessories-count');
+          if(count){
+            const orig = count.textContent;
+            count.textContent = CURRENT_LANG==='es' ? '⚠️ Máximo 4 accesorios' : '⚠️ Max 4 accessories';
+            count.style.color = '#ff6600';
+            setTimeout(function(){
+              count.style.color = '#ff1493';
+              updateAccCount();
+            }, 1500);
+          }
+          return;
+        }
+        currentAccessories.push(accId);
+        row.classList.add('active');
+        // Show custom-acc input if selecting custom
+        if(accId === 'custom-acc'){
+          const box = document.getElementById('custom-acc-box');
+          if(box){
+            box.style.display = 'block';
+            setTimeout(function(){
+              const inp = document.getElementById('custom-acc-input');
+              if(inp) inp.focus();
+            }, 100);
+          }
+        }
+      }
+      updateAccCount();
+      updateAccCatIndicators();
+      // Auto-close when 2 are selected
+      if(currentAccessories.length >= 4){
+        setTimeout(function(){
+          closeAccCategory();
+        }, 500);
+      }
+    });
+  });
+}
+
+function openAccCategory(catId){
+  currentAccCat = catId;
+  document.querySelectorAll('.cat-cell-a').forEach(function(c){c.classList.remove('active');});
+  const cell = document.querySelector('.cat-cell-a[data-a-cat-id="'+catId+'"]');
+  if(cell) cell.classList.add('active');
+  document.getElementById('styles-area-a').style.display = 'block';
+  renderAccCategory(catId);
+}
+
+function closeAccCategory(){
+  currentAccCat = null;
+  document.querySelectorAll('.cat-cell-a').forEach(function(c){c.classList.remove('active');});
+  document.getElementById('styles-area-a').style.display = 'none';
+  updateAccCatIndicators();
+}
+
+function updateAccCatIndicators(){
+  // Show a dot on categories that have at least one selected accessory
+  document.querySelectorAll('.cat-cell-a').forEach(function(c){
+    const catId = c.dataset.aCatId;
+    const d = A_CAT_DATA[catId];
+    if(!d){c.classList.remove('has-selected');return;}
+    const hasSelected = d.accs.some(function(a){return currentAccessories.indexOf(a[0]) !== -1;});
+    c.classList.toggle('has-selected', hasSelected);
+  });
+}
+
+function updateAccCount(){
+  const count = document.getElementById('accessories-count');
+  if(!count) return;
+  const n = currentAccessories.length;
+  if(CURRENT_LANG === 'es'){
+    count.textContent = n === 0 ? 'Selecciona 1-4 accesorios' : (n + ' accesorio' + (n>1?'s':'') + ' seleccionado' + (n>1?'s':''));
+  }else{
+    count.textContent = n === 0 ? 'Select 1-4 accessories' : (n + ' accessor' + (n>1?'ies':'y') + ' selected');
+  }
+  count.style.color = '#ff1493';
+}
+
+document.querySelectorAll('.cat-cell-a').forEach(function(cell){
+  cell.addEventListener('click', function(e){
+    e.preventDefault();
+    const catId = cell.dataset.aCatId;
+    if(currentAccCat === catId){
+      closeAccCategory();
+    }else{
+      openAccCategory(catId);
+    }
+  });
+});
+
+// Initial state: diamonds is the default active accessory
+// (keep the one from original: currentAccessories=['diamonds'] already set in original code)
+updateAccCount();
+updateAccCatIndicators();
+updateStyleCatIndicators();
+updateSelectedStyleDisplay();
+
+updateLanguage('es');
+applyRecommendations('bubble-graffiti');
+if(typeof updateBorderColorVisibility === 'function') updateBorderColorVisibility();
+
+</script>
+
+<div id="color-bar-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:9999;align-items:center;justify-content:center;padding:20px;">
+<div style="background:white;border-radius:25px;padding:24px;max-width:420px;width:100%;border:3px solid #ffb6d9;box-shadow:0 20px 60px rgba(255,20,147,0.4);">
+<h3 id="color-bar-title" style="font-family:'Fredoka',sans-serif;color:#ff1493;font-size:1.2rem;text-align:center;margin:0 0 16px 0;">🎨 Paleta de Colores</h3>
+<p style="text-align:center;font-family:'Poppins',sans-serif;color:#8b5f7f;font-size:0.8rem;margin-bottom:12px;">Elige el color del arcoíris</p>
+<input type="range" id="color-hue-slider" min="0" max="360" value="320" style="width:100%;height:30px;cursor:pointer;background:linear-gradient(90deg,#ff0000 0%,#ff8800 15%,#ffff00 30%,#00ff00 45%,#00ffff 60%,#0000ff 75%,#ff00ff 90%,#ff0088 100%);border-radius:15px;outline:none;appearance:none;-webkit-appearance:none;margin-bottom:16px;">
+<p style="text-align:center;font-family:'Poppins',sans-serif;color:#8b5f7f;font-size:0.8rem;margin-bottom:12px;">Brillo (claro / oscuro)</p>
+<input type="range" id="color-light-slider" min="20" max="80" value="50" style="width:100%;height:30px;cursor:pointer;background:linear-gradient(90deg,#000000,#808080,#ffffff);border-radius:15px;outline:none;appearance:none;-webkit-appearance:none;margin-bottom:16px;">
+<div id="color-preview" style="width:100%;height:70px;border-radius:15px;background:#ff1493;margin-bottom:12px;border:3px solid #ffb6d9;display:flex;align-items:center;justify-content:center;color:white;font-family:'Fredoka',sans-serif;font-weight:700;font-size:1rem;text-shadow:0 1px 3px rgba(0,0,0,0.5);"></div>
+<div style="display:flex;gap:10px;">
+<button id="color-bar-cancel" style="flex:1;background:white;border:2px solid #ffb6d9;color:#ff69b4;padding:10px;border-radius:15px;font-family:'Fredoka',sans-serif;font-weight:700;cursor:pointer;">Cancelar</button>
+<button id="color-bar-apply" style="flex:1;background:linear-gradient(135deg,#ff1493,#ff69b4);color:white;border:none;padding:10px;border-radius:15px;font-family:'Fredoka',sans-serif;font-weight:700;cursor:pointer;box-shadow:0 4px 12px rgba(255,20,147,0.4);">Aplicar</button>
+</div>
+</div>
+</div>
+
+</body></html>
